@@ -1,6 +1,7 @@
 from aiohttp import web
 import socketio
 import reservations
+import login
 
 sio = socketio.AsyncServer()
 app = web.Application()
@@ -16,6 +17,16 @@ async def index(request):
 def connect(sid, environ):
     print(sid + " connected")
     sio.enter_room(sid, room='standard')
+
+
+@sio.on('login')
+async def login_(sid, args):
+    pwds = login.get_all()
+    await send_pwds(sid, pwds)
+
+
+async def send_pwds(sid, pwds):
+    await sio.emit('passwords', pwds, room=sid)
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!! RESERVATIONS !!!!!!!!!!!!!!!!!!!

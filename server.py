@@ -47,6 +47,11 @@ async def add_reservation(sid, res):
     reservations.add(res)
 
 
+@sio.on('editReservation')
+async def edit_reservation(sid, res):
+    reservations.edit(res)
+
+
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 

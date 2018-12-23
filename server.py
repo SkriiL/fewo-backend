@@ -52,6 +52,11 @@ async def edit_reservation(sid, res):
     reservations.edit(res)
 
 
+@sio.on('deleteReservation')
+async def delete_reservation(sid, id):
+    reservations.delete(int(id))
+
+
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 

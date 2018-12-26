@@ -2,7 +2,7 @@ import sqlite3
 
 
 def get_all():
-    conn = sqlite3.connect('db.db')
+    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     c.execute('SELECT * FROM prices')
     prices = c.fetchall()
@@ -14,7 +14,7 @@ def get_all():
 
 def add(price_str, id=len(get_all()) + 1):
     price = price_str.split('|')
-    conn = sqlite3.connect('db.db')
+    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     params = (id, price[1], price[2])
     c.execute('INSERT INTO prices VALUES(?, ?, ?)', params)
@@ -23,7 +23,7 @@ def add(price_str, id=len(get_all()) + 1):
 
 
 def delete(id):
-    conn = sqlite3.connect('db.db')
+    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     params = (id,)
     c.execute('DELETE FROM prices WHERE id=?', params)

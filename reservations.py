@@ -2,7 +2,7 @@ import sqlite3
 
 
 def get_all():
-    conn = sqlite3.connect('db.db')
+    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     c.execute('SELECT * FROM reservations')
     reservations = c.fetchall()
@@ -16,7 +16,7 @@ def get_all():
 
 def add(res_str, id=len(get_all()) + 1):
     res = res_str.split('|')
-    conn = sqlite3.connect('db.db')
+    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     params = (res[0], res[1], res[2], int(res[3]), res[4], res[5], res[6], res[7], res[8], int(res[9]), res[10], id)
     c.execute('INSERT INTO reservations VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', params)
@@ -25,7 +25,7 @@ def add(res_str, id=len(get_all()) + 1):
 
 
 def delete(id):
-    conn = sqlite3.connect('db.db')
+    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     params = (id,)
     c.execute('DELETE FROM reservations WHERE id=?', params)

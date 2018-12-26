@@ -3,7 +3,7 @@ from crypto import OneTimePad
 
 
 def get_all():
-    conn = sqlite3.connect('db.db')
+    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     c.execute('SELECT * FROM passwords')
     results = c.fetchall()
@@ -26,7 +26,7 @@ def add_password(pwd):
             string += letter + '|'
         result_word.append(string[:-1])
 
-    conn = sqlite3.connect('db.db')
+    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     params = (result_word[0], result_word[1])
     c.execute('INSERT INTO passwords VALUES(?, ?)', params)

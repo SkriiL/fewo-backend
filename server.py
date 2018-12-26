@@ -2,6 +2,7 @@ from aiohttp import web
 import socketio
 import reservations
 import login
+import prices
 
 sio = socketio.AsyncServer()
 app = web.Application()
@@ -55,6 +56,34 @@ async def edit_reservation(sid, res):
 @sio.on('deleteReservation')
 async def delete_reservation(sid, id):
     reservations.delete(int(id))
+
+
+# !!!!!!!!!!!!!!!!!!!!!!!!! RESERVATIONS !!!!!!!!!!!!!!!!!!!
+
+
+@sio.on('getAllPrices')
+async def get_all_prices(sid, arg):
+    ps = prices.get_all()
+    await send_prices(sid, ps)
+
+
+async def send_prices(sid, ps):
+    await sio.emit('prices', ps, room=sid)
+
+
+@sio.on('addPrice')
+async def add_price(sid, p):
+    prices.add(p)
+
+
+@sio.on('editPrice')
+async def edit_price(sid, p):
+    prices.edit(p)
+
+
+@sio.on('deletePrice')
+async def delete_price(sid, id):
+    prices.delete(int(id))
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

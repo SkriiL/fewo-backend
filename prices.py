@@ -23,7 +23,6 @@ def add(price_str, id=len(get_all()) + 1):
 
 
 def delete(id):
-    conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
     params = (id,)
     c.execute('DELETE FROM prices WHERE id=?', params)

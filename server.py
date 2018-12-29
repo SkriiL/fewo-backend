@@ -73,7 +73,7 @@ async def send_prices(sid, ps):
 
 @sio.on('addPrice')
 async def add_price(sid, p):
-    prices.add(p)
+    prices.add(price_str=p)
 
 
 @sio.on('editPrice')

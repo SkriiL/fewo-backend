@@ -7,25 +7,28 @@ def get_all():
     c.execute('SELECT * FROM prices')
     prices = c.fetchall()
     prices_dict = []
+    conn.close()
     for p in prices:
         prices_dict.append({'id': p[0], 'label': p[1], 'price': p[2]})
     return prices_dict
 
 
-def add(price_str, id=len(get_all()) + 1):
+def add(price_str, _id=-1):
+    if _id == -1:
+        _id = len(get_all()) + 1
     price = price_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    params = (id, price[1], price[2])
+    params = (_id, price[1], price[2])
     c.execute('INSERT INTO prices VALUES(?, ?, ?)', params)
     conn.commit()
     conn.close()
 
 
-def delete(id):
+def delete(_id):
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    params = (id,)
+    params = (_id,)
     c.execute('DELETE FROM prices WHERE id=?', params)
     conn.commit()
     conn.close()

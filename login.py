@@ -8,6 +8,7 @@ def get_all():
     c.execute('SELECT * FROM passwords')
     results = c.fetchall()
     passwords = []
+    conn.close()
     for r in results:
         pw_list = r[0].split('|')
         key_list = r[1].split('|')

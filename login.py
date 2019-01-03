@@ -17,7 +17,7 @@ def get_all():
     return passwords
 
 
-def add_password(pwd):
+def add_password(pwd, name):
     o = OneTimePad(pwd)
     result = o.encrypt()
     result_word = []
@@ -29,7 +29,7 @@ def add_password(pwd):
 
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    params = (result_word[0], result_word[1])
-    c.execute('INSERT INTO passwords VALUES(?, ?)', params)
+    params = (result_word[0], result_word[1], name)
+    c.execute('INSERT INTO passwords VALUES(?, ?, ?)', params)
     conn.commit()
     conn.close()

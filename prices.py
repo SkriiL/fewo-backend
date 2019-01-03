@@ -20,7 +20,7 @@ def add(price_str, _id=-1):
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
     params = (_id, price[1], price[2], price[3])
-    c.execute('INSERT INTO prices VALUES(?, ?, ?)', params)
+    c.execute('INSERT INTO prices VALUES(?, ?, ?, ?)', params)
     conn.commit()
     conn.close()
 

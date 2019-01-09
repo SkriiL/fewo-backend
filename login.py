@@ -17,6 +17,15 @@ def get_all():
     return passwords
 
 
+def login(pwd):
+    pws = get_all()
+    name = '-1'
+    for pw in pws:
+        if pw['password'] == pwd:
+            name = pw['name']
+    return name
+
+
 def add_password(pwd, name):
     o = OneTimePad(pwd)
     result = o.encrypt()

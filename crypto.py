@@ -35,7 +35,6 @@ class OneTimePad:
             c.append(string)
         return [c, self.key]
 
-
     @staticmethod
     def decrypt(c, k):
         w = []
@@ -46,7 +45,6 @@ class OneTimePad:
             w.append(string)
         return w
 
-
     @staticmethod
     def bin_to_word(bin_list):
         wint = [int(l, 2) for l in bin_list]
@@ -55,3 +53,8 @@ class OneTimePad:
         for l in w_list:
             w += l
         return w
+
+    @staticmethod
+    def word_to_bin(word):
+        word_ascii = [ord(l) for l in word]
+        return [bin(i)[2:] for i in word_ascii]

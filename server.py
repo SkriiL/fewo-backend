@@ -21,13 +21,13 @@ def connect(sid, environ):
 
 
 @sio.on('login')
-async def login_(sid, args):
-    pwds = login.get_all()
-    await send_pwds(sid, pwds)
+async def login_(sid, pw):
+    name = login.login(pw)
+    await send_name(sid, name)
 
 
-async def send_pwds(sid, pwds):
-    await sio.emit('passwords', pwds, room=sid)
+async def send_name(sid, name):
+    await sio.emit('loggedIn', name, room=sid)
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!! RESERVATIONS !!!!!!!!!!!!!!!!!!!
@@ -73,7 +73,7 @@ async def send_prices(sid, ps):
 
 @sio.on('addPrice')
 async def add_price(sid, p):
-    prices.add(p)
+    prices.add(price_str=p)
 
 
 @sio.on('editPrice')

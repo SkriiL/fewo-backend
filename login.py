@@ -8,6 +8,7 @@ def get_all():
     c.execute('SELECT * FROM passwords')
     results = c.fetchall()
     passwords = []
+    conn.close()
     for r in results:
         pw_list = r[0].split('|')
         key_list = r[1].split('|')
@@ -16,7 +17,16 @@ def get_all():
     return passwords
 
 
-def add_password(pwd):
+def login(pwd):
+    pws = get_all()
+    name = '-1'
+    for pw in pws:
+        if pw['password'] == pwd:
+            name = pw['name']
+    return name
+
+
+def add_password(pwd, name):
     o = OneTimePad(pwd)
     result = o.encrypt()
     result_word = []
@@ -28,7 +38,7 @@ def add_password(pwd):
 
     conn = sqlite3.connect('../fewo-backend/db.db')
     c = conn.cursor()
-    params = (result_word[0], result_word[1])
-    c.execute('INSERT INTO passwords VALUES(?, ?)', params)
+    params = (result_word[0], result_word[1], name)
+    c.execute('INSERT INTO passwords VALUES(?, ?, ?)', params)
     conn.commit()
     conn.close()

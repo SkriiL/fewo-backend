@@ -9,7 +9,7 @@ def get_all():
     prices_dict = []
     conn.close()
     for p in prices:
-        prices_dict.append({'id': p[0], 'title': p[1], 'subtitle': p[2], 'price': p[3]})
+        prices_dict.append({'id': p[0], 'title': p[1], 'subtitle': p[2], 'price': p[3], 'priority': p[4]})
     return prices_dict
 
 
@@ -19,8 +19,8 @@ def add(price_str, _id=-1):
     price = price_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    params = (_id, price[1], price[2], price[3])
-    c.execute('INSERT INTO prices VALUES(?, ?, ?, ?)', params)
+    params = (_id, price[1], price[2], price[3], int(price[4]))
+    c.execute('INSERT INTO prices VALUES(?, ?, ?, ?, ?)', params)
     conn.commit()
     conn.close()
 

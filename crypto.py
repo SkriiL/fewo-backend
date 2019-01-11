@@ -58,3 +58,23 @@ class OneTimePad:
     def word_to_bin(word):
         word_ascii = [ord(l) for l in word]
         return [bin(i)[2:] for i in word_ascii]
+
+
+class Hash:
+    def __init__(self, word):
+        self.word = word
+
+    def get_hash(self):
+        word = self.word
+        if len(word) % 2 != 0:
+            word += 'y'
+        word_bin = [ord(l) for l in word]
+        p1 = word_bin[0:int(len(word) / 2)]
+        p2 = word_bin[int(len(word) / 2):]
+        ret = ''
+        for i in range(len(p1)):
+            if p1[i] > p2[i]:
+                ret += str(p1[i] % p2[i])
+            else:
+                ret += str(p2[i] % p1[i])
+        return ret

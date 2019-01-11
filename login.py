@@ -1,5 +1,5 @@
 import sqlite3
-from crypto import OneTimePad
+from crypto import OneTimePad, Hash
 
 
 def get_all():
@@ -10,35 +10,27 @@ def get_all():
     passwords = []
     conn.close()
     for r in results:
-        pw_list = r[0].split('|')
-        key_list = r[1].split('|')
-        pw_bin = OneTimePad.decrypt(pw_list, key_list)
-        passwords.append({'password': OneTimePad.bin_to_word(pw_bin), 'name': r[2]})
+        passwords.append({'hash': r[0], 'name': r[1]})
     return passwords
 
 
 def login(pwd):
+    h = Hash(pwd)
+    hashed = h.get_hash()
     pws = get_all()
     name = '-1'
     for pw in pws:
-        if pw['password'] == pwd:
+        if pw['hash'] == hashed:
             name = pw['name']
     return name
 
 
 def add_password(pwd, name):
-    o = OneTimePad(pwd)
-    result = o.encrypt()
-    result_word = []
-    for item in result:
-        string = ''
-        for letter in item:
-            string += letter + '|'
-        result_word.append(string[:-1])
-
+    h = Hash(pwd)
+    hashed = h.get_hash()
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    params = (result_word[0], result_word[1], name)
-    c.execute('INSERT INTO passwords VALUES(?, ?, ?)', params)
+    params = (hashed, name,)
+    c.execute('INSERT INTO passwords VALUES(?, ?)', params)
     conn.commit()
     conn.close()

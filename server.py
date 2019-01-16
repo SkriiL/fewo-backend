@@ -43,6 +43,16 @@ async def send_reservations(sid, res):
     await sio.emit('reservations', res, room=sid)
 
 
+@sio.on('getAllCalReservations')
+async def get_all_cal_reservations(sid, arg):
+    res = reservations.get_all()
+    await send_reservations_cal(sid, res)
+
+
+async def send_reservations_cal(sid, res):
+    await sio.emit('reservationsCal', res, room=sid)
+
+
 @sio.on('addReservation')
 async def add_reservation(sid, res):
     reservations.add(res)

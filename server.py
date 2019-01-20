@@ -1,70 +1,70 @@
-from aiohttp import web
-import socketio
+from flask import Flask, render_template, request
+from flask_socketio import SocketIO, emit
+from OpenSSL import SSL
 import reservations
 import login
 import prices
 
-sio = socketio.AsyncServer()
-app = web.Application()
-sio.attach(app)
+app = Flask(__name__)
+sio = SocketIO(app)
 
 
-async def index(request):
-    with open('index.html') as f:
-        return web.Response(text=f.read(), content_type='text/html')
+@app.route("/")
+def index():
+    return app.send_static_file('client.html')
 
 
 @sio.on('connect')
-def connect(sid, environ):
-    print(sid + " connected")
-    sio.enter_room(sid, room='standard')
+def connect():
+    print(request.sid + " connected")
 
 
 @sio.on('login')
-async def login_(sid, pw):
+def login_(pw):
+    print("Hallo")
     name = login.login(pw)
-    await send_name(sid, name)
+    send_name(name)
 
 
-async def send_name(sid, name):
-    await sio.emit('loggedIn', name, room=sid)
+def send_name(name):
+    emit('loggedIn', name)
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!! RESERVATIONS !!!!!!!!!!!!!!!!!!!
 
 
 @sio.on('getAllReservations')
-async def get_all_reservations(sid, arg):
+def get_all_reservations(arg):
     res = reservations.get_all()
-    await send_reservations(sid, res)
+    send_reservations(res)
 
 
-async def send_reservations(sid, res):
-    await sio.emit('reservations', res, room=sid)
+def send_reservations(res):
+    emit('reservations', res)
 
 
 @sio.on('getAllCalReservations')
-async def get_all_cal_reservations(sid, arg):
+def get_all_cal_reservations(arg):
     res = reservations.get_all()
-    await send_reservations_cal(sid, res)
+    send_reservations_cal(res)
 
 
-async def send_reservations_cal(sid, res):
-    await sio.emit('reservationsCal', res, room=sid)
+def send_reservations_cal(res):
+    emit('reservationsCal', res)
 
 
 @sio.on('addReservation')
-async def add_reservation(sid, res):
+def add_reservation(res):
     reservations.add(res)
 
 
 @sio.on('editReservation')
-async def edit_reservation(sid, res):
+def edit_reservation(res):
     reservations.edit(res)
 
 
 @sio.on('deleteReservation')
-async def delete_reservation(sid, id):
+def delete_reservation(id):
     reservations.delete(int(id))
 
 
@@ -72,34 +72,36 @@ async def delete_reservation(sid, id):
 
 
 @sio.on('getAllPrices')
-async def get_all_prices(sid, arg):
+def get_all_prices(sid):
     ps = prices.get_all()
-    await send_prices(sid, ps)
+    send_prices(ps)
 
 
-async def send_prices(sid, ps):
-    await sio.emit('prices', ps, room=sid)
+def send_prices(ps):
+    emit('prices', ps)
 
 
 @sio.on('addPrice')
-async def add_price(sid, p):
+def add_price(p):
     prices.add(price_str=p)
 
 
 @sio.on('editPrice')
-async def edit_price(sid, p):
+def edit_price(p):
     prices.edit(p)
 
 
 @sio.on('deletePrice')
-async def delete_price(sid, id):
+def delete_price(id):
     prices.delete(int(id))
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+context = SSL.Context(SSL.SSLv23_METHOD)
+context.use_privatekey_file('')
+context.use_certificate_file('')
 
-app.router.add_get('/', index)
 
 if __name__ == '__main__':
-    web.run_app(app, port='56789')
+    sio.run(app, port=56789, host="0.0.0.0", ssl_context=context)

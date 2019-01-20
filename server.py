@@ -99,9 +99,9 @@ def delete_price(id):
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 context = SSL.Context(SSL.SSLv23_METHOD)
-context.use_privatekey_file('')
-context.use_certificate_file('')
+context.use_privatekey_file('../_.fewogrimm.de_private_key.key')
+context.use_certificate_file('../fewogrimm.de_ssl_certificate.cer')
 
 
 if __name__ == '__main__':
-    sio.run(app, port=56789, host="0.0.0.0", ssl_context=context)
+    sio.run(app, port=56789, host="0.0.0.0", ssl_context=("../fewogrimm.de_ssl_certificate.cer", "../_.fewogrimm.de_private_key.key"))

@@ -2,9 +2,6 @@ from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
 from OpenSSL import SSL
 import socketio
-import engineio
-import eventlet
-import eventlet.wsgi
 import reservations
 import login
 import prices
@@ -109,4 +106,4 @@ if __name__ == '__main__':
     #                                       certfile='cert.crt',
     #                                       keyfile="private.key",
     #                                       server_side=True), app)
-    sio.run(app, port=56789, host="0.0.0.0", keyfile="", certfile="", debug=True)
+    sio.run(app, port=56789, host="0.0.0.0", keyfile="../_.fewogrimm.de_private_key.key", certfile="../fewogrimm.de_ssl_certificate.cer", debug=True)

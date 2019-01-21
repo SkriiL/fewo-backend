@@ -100,12 +100,9 @@ def delete_price(id):
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-context = SSL.Context(SSL.SSLv23_METHOD)
-context.use_privatekey_file("../_.fewogrimm.de_private_key.key")
-context.use_certificate_file("../fewogrimm.de_ssl_certificate.cer")
-
 
 if __name__ == '__main__':
+    context = ("../_.fewogrimm.de_private_key.key", "../fewogrimm.de_ssl_certificate.cer")
     #eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
     #                                       certfile='cert.crt',
     #                                       keyfile="private.key",

@@ -10,7 +10,7 @@ import login
 import prices
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "secret!"
+#app.config['SECRET_KEY'] = "secret!"
 sio = SocketIO(app)
 
 
@@ -105,8 +105,8 @@ def delete_price(id):
 
 
 if __name__ == '__main__':
-    eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
-                                           certfile='cert.crt',
-                                           keyfile="private.key",
-                                           server_side=True), app)
-    #sio.run(app, port=56789, host="0.0.0.0")
+    #eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
+    #                                       certfile='cert.crt',
+    #                                       keyfile="private.key",
+    #                                       server_side=True), app)
+    sio.run(app, port=56789, host="0.0.0.0", keyfile="", certfile="", debug=True)

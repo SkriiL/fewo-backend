@@ -4,6 +4,7 @@ from OpenSSL import SSL
 import ssl
 import socketio
 import reservations
+import eventlet
 import login
 import prices
 
@@ -109,4 +110,4 @@ if __name__ == '__main__':
     #                                       certfile='cert.crt',
     #                                       keyfile="private.key",
     #                                       server_side=True), app)
-    sio.run(app, port=56789, host="0.0.0.0", ssl_context=context, threaded=True, debug=True)
+    eventlet.wrap_ssl(sio.run(app, port=56789, host="0.0.0.0", threaded=True, debug=True), keyfile="../_.fewogrimm.de_private_key.key", certfile="../fewogrimm.de_ssl_certificate.cer")

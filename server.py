@@ -106,7 +106,7 @@ def delete_price(id):
 
 if __name__ == '__main__':
     eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
-                                           certfile='cert.crt',
-                                           keyfile="private.key",
+                                           certfile='../fewogrimm.de_ssl_certificate.cer',
+                                           keyfile="../_.fewogrimm.de_private_key.key",
                                            server_side=True), app)
     #sio.run(app, port=56789, host="0.0.0.0")

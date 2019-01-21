@@ -102,7 +102,7 @@ def delete_price(id):
 
 
 if __name__ == '__main__':
-    context = ("../_.fewogrimm.de_private_key.key", "../fewogrimm.de_ssl_certificate.cer")
+    context = ("../fewogrimm.de_ssl_certificate.cer", "../_.fewogrimm.de_private_key.key")
     #eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
     #                                       certfile='cert.crt',
     #                                       keyfile="private.key",

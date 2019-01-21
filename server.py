@@ -100,10 +100,14 @@ def delete_price(id):
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+context = SSL.Context(SSL.SSLv23_METHOD)
+context.use_privatekey_file("../_.fewogrimm.de_private_key.key")
+context.use_certificate_file("../fewogrimm.de_ssl_certificate.cer")
+
 
 if __name__ == '__main__':
     #eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
     #                                       certfile='cert.crt',
     #                                       keyfile="private.key",
     #                                       server_side=True), app)
-    sio.run(app, port=56789, host="0.0.0.0", keyfile="../_.fewogrimm.de_private_key.key", certfile="../fewogrimm.de_ssl_certificate.cer", debug=True)
+    sio.run(app, port=56789, host="0.0.0.0", debug=True/False, ssl_context=context)

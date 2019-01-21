@@ -105,8 +105,11 @@ def delete_price(id):
 
 
 if __name__ == '__main__':
-    eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
-                                           certfile='../fewogrimm.de_ssl_certificate.cer',
-                                           keyfile="../_.fewogrimm.de_private_key.key",
-                                           server_side=True), app)
-    #sio.run(app, port=56789, host="0.0.0.0")
+    try:
+        eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
+                                               certfile='../fewogrimm.de_ssl_certificate.cer',
+                                               keyfile="../_.fewogrimm.de_private_key.key",
+                                               server_side=True), app)
+    except Exception as e:
+        print("Fehler")
+    # sio.run(app, port=56789, host="0.0.0.0")

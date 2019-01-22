@@ -12,6 +12,8 @@ app = Flask(__name__)
 #app.config['SECRET_KEY'] = "secret!"
 sio = SocketIO(app)
 
+eventlet.monkey_patch()
+
 
 @app.route("/")
 def index():

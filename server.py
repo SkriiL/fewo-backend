@@ -28,7 +28,7 @@ def connect():
 @sio.on('login')
 def login_(pw):
     print("Hallo")
-    name = login.login(pw)
+    name = login.login(pw['data'])
     send_name(name)
 
 
@@ -61,17 +61,17 @@ def send_reservations_cal(res):
 
 @sio.on('addReservation')
 def add_reservation(res):
-    reservations.add(res)
+    reservations.add(res['data'])
 
 
 @sio.on('editReservation')
 def edit_reservation(res):
-    reservations.edit(res)
+    reservations.edit(res['data'])
 
 
 @sio.on('deleteReservation')
 def delete_reservation(id):
-    reservations.delete(int(id))
+    reservations.delete(int(id['data']))
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!! RESERVATIONS !!!!!!!!!!!!!!!!!!!
@@ -89,17 +89,17 @@ def send_prices(ps):
 
 @sio.on('addPrice')
 def add_price(p):
-    prices.add(price_str=p)
+    prices.add(price_str=p['data'])
 
 
 @sio.on('editPrice')
 def edit_price(p):
-    prices.edit(p)
+    prices.edit(p['data'])
 
 
 @sio.on('deletePrice')
 def delete_price(id):
-    prices.delete(int(id))
+    prices.delete(int(id['data']))
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

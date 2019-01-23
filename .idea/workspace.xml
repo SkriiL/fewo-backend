@@ -31,12 +31,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="47" />
+          <entry key="py" value="52" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="47" />
+          <entry key="Python" value="52" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="633">
-              <caret line="114" column="53" selection-start-line="114" selection-start-column="53" selection-end-line="114" selection-end-column="53" />
+              <caret line="103" column="56" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -124,7 +124,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="flask-json" />
+        <entry key="$PROJECT_DIR$" value="server" />
       </map>
     </option>
   </component>
@@ -278,7 +278,7 @@
         <item itemvalue="Python.login" />
         <item itemvalue="Python.crypto" />
         <item itemvalue="Python.server" />
-        <item itemvalue="Python.server" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -518,7 +518,7 @@
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="633">
-          <caret line="114" column="53" selection-start-line="114" selection-start-column="53" selection-end-line="114" selection-end-column="53" />
+          <caret line="103" column="56" selection-start-line="103" selection-start-column="56" selection-end-line="103" selection-end-column="56" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>

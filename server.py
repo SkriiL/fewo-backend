@@ -1,15 +1,11 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, emit
-from OpenSSL import SSL
-import ssl
-import socketio
 import reservations
 import eventlet
 import login
 import prices
 
 app = Flask(__name__)
-#app.config['SECRET_KEY'] = "secret!"
 sio = SocketIO(app)
 
 eventlet.monkey_patch()
@@ -104,12 +100,5 @@ def delete_price(id):
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-context = ("../fewogrimm.de_ssl_certificate.cer", "../_.fewogrimm.de_private_key.key")
-
 if __name__ == '__main__':
-    #eventlet.wsgi.server(eventlet.wrap_ssl(eventlet.listen(('', 56789)),
-    #                                       certfile='cert.crt',
-    #                                       keyfile="private.key",
-    #                                       server_side=True), app)
-    eventlet.wrap_ssl(sio.run(app, port=56789, host="0.0.0.0", debug=True), keyfile="../_.fewogrimm.de_private_key.key", certfile="../fewogrimm.de_ssl_certificate.cer", server_side=True)
+    sio.run(app, port=56789, host="0.0.0.0", debug=True)

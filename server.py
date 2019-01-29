@@ -78,6 +78,7 @@ def delete_reservation(id):
 @sio.on('createPdf')
 def create_pdf(id):
     pdf.create(id)
+    success()
 
 
 def success():

@@ -95,7 +95,10 @@ class Reservation:
         self.country = res["country"]
         self.id = res["id"]
         self.nationality = res["nationality"]
-        self.isSameAsNormal = res["isSameAsNormal"]
+        if self.isSameAsNormal == 'true':
+            self.isSameAsNormal = True
+        else:
+            self.isSameAsNormal = False
         self.billStreet = res["billStreet"]
         self.billHouseNumber = res["billHouseNumber"]
         self.billCity = res["billCity"]

@@ -80,6 +80,10 @@ def create_pdf(id):
     pdf.create(id)
 
 
+def success():
+    emit('pdf', 'success')
+
+
 # !!!!!!!!!!!!!!!!!!!!!!!!! PRICES !!!!!!!!!!!!!!!!!!!
 
 

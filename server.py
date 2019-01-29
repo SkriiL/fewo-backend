@@ -7,6 +7,7 @@ import reservations
 import eventlet
 import login
 import prices
+import pdf
 
 app = Flask(__name__)
 #app.config['SECRET_KEY'] = "secret!"
@@ -74,7 +75,12 @@ def delete_reservation(id):
     reservations.delete(int(id))
 
 
-# !!!!!!!!!!!!!!!!!!!!!!!!! RESERVATIONS !!!!!!!!!!!!!!!!!!!
+@sio.on('createPdf')
+def create_pdf(id):
+    pdf.create(id)
+
+
+# !!!!!!!!!!!!!!!!!!!!!!!!! PRICES !!!!!!!!!!!!!!!!!!!
 
 
 @sio.on('getAllPrices')

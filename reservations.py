@@ -16,6 +16,20 @@ def get_all():
     return res_dir
 
 
+def get_single(id):
+    conn = sqlite3.connect('db.db')
+    c = conn.cursor()
+    params = (int(id),)
+    c.execute('SELECT * FROM reservations WHERE id=?', params)
+    r = c.fetchone()
+    res = {'name': r[0], 'dateFrom': r[1], 'dateTo': r[2], 'count': r[3], 'price': r[4], 'email': r[5], 'phone': r[6],
+           'street': r[7], 'houseNumber': r[8], 'city': r[9], 'postalCode': r[10], 'country': r[11], 'id': r[12],
+           'nationality': r[13], 'isSameAsNormal': r[14], 'billStreet': r[15], 'billHouseNumber': r[16],
+           'billCity': r[17], 'billPostalCode': r[18], 'billCountry': r[19]}
+    conn.close()
+    return res
+
+
 def add(res_str, id=len(get_all()) + 1):
     res = res_str.split('|')
     conn = sqlite3.connect('db.db')
@@ -40,3 +54,49 @@ def edit(res_str):
     res = res_str.split('|')
     delete(int(res[12]))
     add(res_str, int(res[12]))
+
+
+class Reservation:
+    def __init__(self):
+        self.name = ""
+        self.dateFrom = ""
+        self.dateTo = ""
+        self.count = -1
+        self.price = ""
+        self.email = ""
+        self.phone = ""
+        self.street = ""
+        self.houseNumber = ""
+        self.city = ""
+        self.postalCode = ""
+        self.country = ""
+        self.id = -1
+        self.nationality = ""
+        self.isSameAsNormal = False
+        self.billStreet = ""
+        self.billHouseNumber = ""
+        self.billCity = ""
+        self.billPostalCode = ""
+        self.billCountry = ""
+
+    def values_to_model(self, res):
+        self.name = res["name"]
+        self.dateFrom = res["dateFrom"]
+        self.dateTo = res["dateTo"]
+        self.count = res["count"]
+        self.price = res["price"]
+        self.email = res["email"]
+        self.phone = res["phone"]
+        self.street = res["street"]
+        self.houseNumber = res["houseNumber"]
+        self.city = res["city"]
+        self.postalCode = res["postalCode"]
+        self.country = res["country"]
+        self.id = res["id"]
+        self.nationality = res["nationality"]
+        self.isSameAsNormal = res["isSameAsNormal"]
+        self.billStreet = res["billStreet"]
+        self.billHouseNumber = res["billHouseNumber"]
+        self.billCity = res["billCity"]
+        self.billPostalCode = res["billPostalCode"]
+        self.billCountry = res["billCountry"]

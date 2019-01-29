@@ -11,8 +11,8 @@ def create(res_id):
     c = canvas.Canvas('/var/www/html/assets/request.pdf')
 
     c.setFont('Courier', 10)
-    c.drawString(20, 825, "Meldeschein / Registration form")
-    c.drawString(260, 825, "Ferienwohnung Grimm | Mühlstraße 4 | 63579 Freigericht")
+    c.drawString(20, 815, "Meldeschein / Registration form")
+    c.drawString(260, 815, "Ferienwohnung Grimm | Mühlstraße 4 | 63579 Freigericht")
     form = c.acroForm
 
     c.drawString(20, 790, "Datum Anreise")

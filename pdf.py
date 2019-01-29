@@ -8,7 +8,7 @@ def create(res_id):
     res = get_single(int(res_id))
     r = Reservation()
     r.values_to_model(res)
-    c = canvas.Canvas('/var/www/html/assets/requested.pdf')
+    c = canvas.Canvas('/var/www/html/assets/request.pdf')
 
     c.setFont('Courier', 10)
     c.drawString(10, 825, "Meldeschein / Registration form")

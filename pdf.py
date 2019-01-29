@@ -52,9 +52,9 @@ def create(res_id):
     form.textfield(name="signature", tooltip="Unterschrift", x=100, y=585, borderStyle="inset", borderColor=black, fontName="Courier",
                    fillColor=white, width=440, textColor=black, forceBorder=True, value="", fontSize=14, height=20)
 
-    form.checkbox(name="bill", tooltip="Rechnungsanschrift stimmt überein", x=10, y=535, borderStyle="inset",
-                  borderColor=black, fillColor=white, textColor=black, forceBorder=True)
-    c.drawString(40, 540, "Die Rechnungsanschrift stimmt mit der Privatanschrift überein")
+    form.checkbox(name="bill", tooltip="Rechnungsanschrift stimmt überein", x=20, y=535, borderStyle="inset",
+                  borderColor=black, fillColor=white, textColor=black, forceBorder=True, checked=r.isSameAsNormal)
+    c.drawString(50, 540, "Die Rechnungsanschrift stimmt mit der Privatanschrift überein")
 
     c.drawString(20, 510, "Firmenname")
     form.textfield(name="companyName", tooltip="Firmenname", x=100, y=505, borderStyle="inset", borderColor=black, fontName="Courier",

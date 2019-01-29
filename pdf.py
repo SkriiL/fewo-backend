@@ -58,7 +58,7 @@ def create(res_id):
 
     c.drawString(10, 510, "Firmenname")
     form.textfield(name="companyName", tooltip="Firmenname", x=100, y=505, borderStyle="inset", borderColor=black, fontName="Courier",
-                   fillColor=white, width=440, textColor=black, forceBorder=True, value="hallo", fontSize=14, height=20)
+                   fillColor=white, width=440, textColor=black, forceBorder=True, value=r.companyName, fontSize=14, height=20)
     c.drawString(10, 480, "Straße, Nr")
     form.textfield(name="street", tooltip="Straße, Nr", x=100, y=475, borderStyle="inset", borderColor=black, fontName="Courier",
                    fillColor=white, width=440, textColor=black, forceBorder=True, value=r.billStreet + " " + r.billHouseNumber,

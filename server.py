@@ -28,7 +28,6 @@ def connect():
 
 @sio.on('login')
 def login_(pw):
-    print("Hallo")
     name = login.login(pw)
     send_name(name)
 

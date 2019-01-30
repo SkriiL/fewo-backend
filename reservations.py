@@ -96,7 +96,7 @@ class Reservation:
         self.id = res["id"]
         self.nationality = res["nationality"]
         print(self.isSameAsNormal)
-        if self.isSameAsNormal == 'true':
+        if res['isSameAsNormal'] == 'true':
             self.isSameAsNormal = True
         else:
             self.isSameAsNormal = False

@@ -32,7 +32,7 @@ def get_single(id):
 
 def add(res_str, id=-1):
     if id == -1:
-        id = len(get_all())
+        id = len(get_all()) + 1
         ress = get_all()
         ids = [r['id'] for r in ress]
         correct = False

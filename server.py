@@ -62,16 +62,23 @@ def send_reservations_cal(res):
 @sio.on('addReservation')
 def add_reservation(res):
     reservations.add(res)
+    res_success()
 
 
 @sio.on('editReservation')
 def edit_reservation(res):
     reservations.edit(res)
+    res_success()
 
 
 @sio.on('deleteReservation')
 def delete_reservation(id):
     reservations.delete(int(id))
+    res_success()
+
+
+def res_success():
+    emit('resSuccess', 'success')
 
 
 @sio.on('createPdf')
@@ -100,16 +107,23 @@ def send_prices(ps):
 @sio.on('addPrice')
 def add_price(p):
     prices.add(price_str=p)
+    price_success()
 
 
 @sio.on('editPrice')
 def edit_price(p):
     prices.edit(p)
+    price_success()
 
 
 @sio.on('deletePrice')
 def delete_price(id):
     prices.delete(int(id))
+    price_success()
+
+
+def price_success():
+    emit('priceSuccess', 'success')
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

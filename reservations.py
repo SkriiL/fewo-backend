@@ -30,7 +30,19 @@ def get_single(id):
     return res
 
 
-def add(res_str, id=len(get_all()) + 1):
+def add(res_str, id=-1):
+    if id == -1:
+        id = len(get_all())
+        ress = get_all()
+        ids = [r['id'] for r in ress]
+        correct = False
+        while not correct:
+            if id in ids:
+                id += 1
+            else:
+                break
+
+
     res = res_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()

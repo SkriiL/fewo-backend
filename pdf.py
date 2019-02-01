@@ -1,7 +1,7 @@
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfform, pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.lib.colors import grey, black, white
+from reportlab.lib.colors import grey, black, white, lightgrey
 from reservations import get_single, Reservation
 from date import Date
 
@@ -103,8 +103,14 @@ def create_invoice(res_id):
     c.drawString(140, 760, r.name)
     c.drawString(320, 760, "Personenzahl")
     c.drawString(440, 760, str(r.count))
-    form.textfield(name="name", tooltip="Gastname", x=150, y=695, borderStyle="inset", borderColor=black,
-                   fontName="Courier", fillColor=white, width=300, textColor=black, forceBorder=True, value=r.name,
+    form.textfield(name="name", tooltip="Gastname", x=20, y=730, borderStyle="inset", borderColor=black,
+                   fontName="Courier", fillColor=lightgrey, width=150, textColor=black, forceBorder=True, value=r.name,
+                   fontSize=14, height=20)
+    form.textfield(name="name", tooltip="Gastname", x=170, y=730, borderStyle="inset", borderColor=black,
+                   fontName="Courier", fillColor=lightgrey, width=300, textColor=black, forceBorder=True, value=r.name,
+                   fontSize=14, height=20)
+    form.textfield(name="name", tooltip="Gastname", x=470, y=730, borderStyle="inset", borderColor=black,
+                   fontName="Courier", fillColor=lightgrey, width=150, textColor=black, forceBorder=True, value=r.name,
                    fontSize=14, height=20)
     c.drawString(20, 670, "Abreise")
     form.textfield(name="dateTo", tooltip="Abreise", x=150, y=665, borderStyle="inset", borderColor=black,

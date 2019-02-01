@@ -108,7 +108,7 @@ def create_invoice(res_id):
     form.textfield(name="count", tooltip="Personenzahl", x=150, y=635, borderStyle="inset", borderColor=black,
                    fontName="Courier", fillColor=white, width=300, textColor=black, forceBorder=True, value=str(r.count),
                    fontSize=14, height=20)
-    c.drawString(10, 600, "Anzahl")
+    c.drawString(20, 600, "Anzahl")
     c.drawString(100, 600, "Beschreibung")
     c.drawString(400, 600, "Preis")
 
@@ -117,7 +117,7 @@ def create_invoice(res_id):
     date_to = Date()
     date_to.string_to_model(r.dateTo)
     duration = date_from.get_duration(date_to)
-    c.drawString(10, 570, str(duration) + " Tage")
+    c.drawString(20, 570, str(duration) + " Tage")
 
     c.drawString(200, 570, "Ferienwohnung - Gartenstraße 17")
     c.drawString(200, 540, "2,5 Zimmer, Küche, Bad")

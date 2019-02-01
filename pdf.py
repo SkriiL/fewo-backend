@@ -80,7 +80,7 @@ def create_invoice(res_id):
     r.values_to_model(res)
     c = canvas.Canvas('/var/www/html/assets/requestInvoice.pdf')
 
-    c.setFont('Calibri', 12)
+    c.setFont('Arial', 12)
     c.drawString(20, 815, "Rechnung")
     form = c.acroForm
 

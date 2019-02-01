@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a67b104e-4105-4c77-a109-3168e497c488" name="Default Changelist" comment="#21 rechnung pdf">
+    <list default="true" id="a67b104e-4105-4c77-a109-3168e497c488" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdf.py" afterDir="false" />
     </list>
@@ -44,14 +44,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="12718" />
+          <entry key="py" value="12797" />
           <entry key="txt" value="374" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="374" />
-          <entry key="Python" value="12718" />
+          <entry key="Python" value="12797" />
         </counts>
       </usages-collector>
     </session>
@@ -62,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
-              <caret line="85" column="13" lean-forward="true" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+              <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
               <folding>
                 <marker date="1549033769092" expanded="true" signature="1307:1310" ph="..." />
                 <marker date="1549033769092" expanded="true" signature="1509:1539" ph="..." />
@@ -88,8 +88,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="90" column="36" lean-forward="true" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+            <state relative-caret-position="136">
+              <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -101,7 +101,7 @@
         <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/reportlab/pdfgen/canvas.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
-              <caret line="1649" column="29" lean-forward="true" selection-start-line="1649" selection-start-column="29" selection-end-line="1649" selection-end-column="29" />
+              <caret line="1649" column="29" selection-start-line="1649" selection-start-column="29" selection-end-line="1649" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -355,20 +355,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545479472885</updated>
-    </task>
-    <task id="LOCAL-00006" summary="#4 delete reservations">
-      <created>1545580066339</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1545580066339</updated>
-    </task>
-    <task id="LOCAL-00007" summary="#6 crypto&#10;#5 edit reservations">
-      <created>1545746521002</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1545746521002</updated>
     </task>
     <task id="LOCAL-00008" summary="some fixes">
       <created>1546083516587</created>
@@ -699,7 +685,21 @@
       <option name="project" value="LOCAL" />
       <updated>1549038797492</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="#21 rechnung pdf">
+      <created>1549038840918</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1549038840918</updated>
+    </task>
+    <task id="LOCAL-00056" summary="#21 rechnung pdf">
+      <created>1549038916780</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1549038916780</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -809,7 +809,7 @@
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
-          <caret line="85" column="13" lean-forward="true" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
           <folding>
             <marker date="1549033769092" expanded="true" signature="1307:1310" ph="..." />
             <marker date="1549033769092" expanded="true" signature="1509:1539" ph="..." />
@@ -832,14 +832,14 @@
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/reportlab/pdfgen/canvas.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="1649" column="29" lean-forward="true" selection-start-line="1649" selection-start-column="29" selection-end-line="1649" selection-end-column="29" />
+          <caret line="1649" column="29" selection-start-line="1649" selection-start-column="29" selection-end-line="1649" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pdf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="90" column="36" lean-forward="true" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+        <state relative-caret-position="136">
+          <caret line="83" column="58" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

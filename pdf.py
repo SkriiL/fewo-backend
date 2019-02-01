@@ -1,5 +1,6 @@
 from reportlab.pdfgen import canvas
-from reportlab.pdfbase import pdfform
+from reportlab.pdfbase import pdfform, pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.colors import grey, black, white
 from reservations import get_single, Reservation
 from date import Date
@@ -79,8 +80,10 @@ def create_invoice(res_id):
     r = Reservation()
     r.values_to_model(res)
     c = canvas.Canvas('/var/www/html/assets/requestInvoice.pdf')
-    print(c.getAvailableFonts())
-    c.setFont('Courier', 12)
+
+    pdfmetrics.registerFont(TTFont('Calibri', "Calibri.ttf"))
+
+    c.setFont('Calibri', 12)
     c.drawString(20, 815, "Rechnung")
     form = c.acroForm
 

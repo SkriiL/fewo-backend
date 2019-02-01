@@ -9,13 +9,13 @@ from date import Date
 
 
 def make_nice(text):
-    text = text.replace("Ä", "&Auml")
-    text = text.replace("ä", "&auml")
-    text = text.replace("Ö", "&Ouml")
-    text = text.replace("ö", "&euml")
-    text = text.replace("Ü", "&Uuml")
-    text = text.replace("ü", "&uuml")
-    text = text.replace("ß", "szlig")
+    text = text.replace("Ä", "Ae")
+    text = text.replace("ä", "ae")
+    text = text.replace("Ö", "Oe")
+    text = text.replace("ö", "oe")
+    text = text.replace("Ü", "Üe")
+    text = text.replace("ü", "üe")
+    text = text.replace("ß", "ss")
     return text
 
 

@@ -118,18 +118,18 @@ def create_invoice(res_id):
     c.setFont('Calibri', 11)
     c.drawString(440, 760, str(r.count))
 
-    c.line(107, 620, 587, 620) #107 Startwert = +87
-    c.line(107, 620, 107, 545)
-    c.line(107, 545, 587, 545)
-    c.line(587, 545, 587, 620)
-    c.line(107, 590, 587, 590)
+    c.line(58, 620, 538, 620) #58 Startwert = +38
+    c.line(58, 620, 58, 545)
+    c.line(58, 545, 538, 545)
+    c.line(538, 545, 538, 620)
+    c.line(58, 590, 538, 590)
     c.line(150, 620, 150, 545)
     c.line(400, 620, 400, 545)
 
     c.setFont('CalibriBold', 11)
-    c.drawString(117, 600, "Anzahl")
-    c.drawString(247, 600, "Beschreibung")
-    c.drawString(497, 600, "Preis")
+    c.drawString(68, 600, "Anzahl")
+    c.drawString(198, 600, "Beschreibung")
+    c.drawString(448, 600, "Preis")
 
     date_from = Date()
     date_from.string_to_model(r.dateFrom)
@@ -138,10 +138,10 @@ def create_invoice(res_id):
     duration = date_from.get_duration(date_to)
 
     c.setFont('Calibri', 11)
-    c.drawString(30, 570, str(duration) + " Tage")
+    c.drawString(68, 570, str(duration) + " Tage")
 
-    c.drawString(117, 570, "Ferienwohnung - Gartenstraße 17")
-    c.drawString(247, 555, "2,5 Zimmer, Küche, Bad")
-    c.drawString(497, 570, r.price + "€")
+    c.drawString(198, 570, "Ferienwohnung - Gartenstraße 17")
+    c.drawString(198, 555, "2,5 Zimmer, Küche, Bad")
+    c.drawString(448, 570, r.price + "€")
 
     c.save()

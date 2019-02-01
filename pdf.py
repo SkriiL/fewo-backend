@@ -82,10 +82,14 @@ def create_invoice(res_id):
     c = canvas.Canvas('/var/www/html/assets/requestInvoice.pdf')
 
     pdfmetrics.registerFont(TTFont('Calibri', "Calibri.ttf"))
+    pdfmetrics.registerFont(TTFont('CalibriBold', "CALIBRIB.ttf"))
 
-    c.setFont('Calibri', 12)
-    c.drawString(20, 815, "Rechnung")
     form = c.acroForm
+
+    c.setFont('CalibriBold', 13)
+    c.drawString(20, 815, "Rechnung")
+
+    c.setFont('Calibri', 11)
 
     c.drawString(20, 790, "Rechnungsnummer")
     c.drawString(140, 790, "1")

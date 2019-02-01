@@ -121,6 +121,8 @@ def create_invoice(res_id):
     c.line(20, 545, 500, 545)
     c.line(500, 545, 500, 620)
     c.line(20, 590, 500, 590)
+    c.line(150, 620, 150, 545)
+    c.line(400, 620, 400, 545)
 
     c.setFont('CalibriBold', 11)
     c.drawString(30, 600, "Anzahl")

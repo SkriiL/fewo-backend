@@ -119,8 +119,8 @@ def create_invoice(res_id):
     duration = date_from.get_duration(date_to)
     c.drawString(20, 570, str(duration) + " Tage")
 
-    c.drawString(200, 570, "Ferienwohnung - Gartenstraße 17")
-    c.drawString(200, 540, "2,5 Zimmer, Küche, Bad")
+    c.drawString(100, 570, "Ferienwohnung - Gartenstraße 17")
+    c.drawString(100, 555, "2,5 Zimmer, Küche, Bad")
     c.drawString(400, 570, r.price + "€")
 
     c.save()

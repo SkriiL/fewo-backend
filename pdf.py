@@ -90,7 +90,17 @@ def create_invoice(res_id):
     c.setFont("CalibriBold", 14)
     c.drawString(58, 800, "Ferienwohnung Grimm")
     c.setFont("Calibri", 11)
-    c.drawString(58, 780, "Ferienwohnung - Monteurwohnung")
+    c.drawString(58, 785, "Ferienwohnung - Monteurwohnung")
+
+    c.setFont("CalibriBold", 11)
+    c.drawRightString(538, 800, "Ferienwohnung Grimm")
+    c.setFont("Calibri", 11)
+    c.drawRightString(538, 790, "Elke und Peter Grimm")
+    c.drawRightString(538, 780, "Mühlstraße 4")
+    c.drawRightString(538, 770, "63579 Freigericht")
+    c.drawRightString(538, 760, "+49 6055-6302")
+    c.drawRightString(538, 750, "info@fewogrimm.de")
+    c.drawRightString(538, 740, "www.fewogrimm.de")
 
     c.setFont('CalibriBold', 13)
     c.drawString(58, 715, "Rechnung")

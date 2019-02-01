@@ -167,6 +167,8 @@ def create_invoice(res_id):
                  "Kein Ausweis der Umsatzsteuer aufgrund der Anwendung der Kleinunternehmerregelung (§ 19 UStG).")
     c.drawString(58, 388, "Wir danken recht herzlich für ihren Besuch und wünschen Ihnen eine angenehme Heimreise.")
 
-    c.drawCentredString(0, 42, "Ferienwohnung Grimm | Mühlstraße 4 | 63579 Freigericht")
+    c.drawCentredString(289, 66, "Ferienwohnung Grimm | Mühlstraße 4 | 63579 Freigericht")
+    c.drawCentredString(289, 54, "+49 6055-6302 | info@fewogrimm.de | www.fewogrimm.de")
+    c.drawCentredString(289, 42, "VR-Bank MKB eG | IBAN: DE54 5066 1639 0200 8720 32 | BIC: GENODEF1LSR")
 
     c.save()

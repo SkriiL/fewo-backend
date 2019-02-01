@@ -74,9 +74,15 @@ def delete_reservation(id):
     reservations.delete(int(id))
 
 
-@sio.on('createPdf')
-def create_pdf(id):
-    pdf.create(id)
+@sio.on('createForm')
+def create_form(id):
+    pdf.create_registration_form(id)
+    success()
+
+
+@sio.on('createInvoice')
+def create_form(id):
+    pdf.create_invoice(id)
     success()
 
 

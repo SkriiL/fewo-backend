@@ -42,7 +42,6 @@ def add(res_str, id=-1):
             else:
                 break
 
-
     res = res_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()

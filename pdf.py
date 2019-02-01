@@ -122,6 +122,7 @@ def create_invoice(res_id):
     c.line(500, 545, 500, 620)
     c.line(20, 590, 500, 590)
 
+    c.setFont('CalibriBold', 11)
     c.drawString(30, 600, "Anzahl")
     c.drawString(160, 600, "Beschreibung")
     c.drawString(410, 600, "Preis")
@@ -131,6 +132,8 @@ def create_invoice(res_id):
     date_to = Date()
     date_to.string_to_model(r.dateTo)
     duration = date_from.get_duration(date_to)
+
+    c.setFont('Calibri', 11)
     c.drawString(30, 570, str(duration) + " Tage")
 
     c.drawString(160, 570, "Ferienwohnung - Gartenstraße 17")

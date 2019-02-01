@@ -5,6 +5,8 @@ from reportlab.lib.colors import grey, black, white, lightgrey
 from reservations import get_single, Reservation
 from date import Date
 
+#LENGTH 595 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 def create_registration_form(res_id):
     res = get_single(int(res_id))
@@ -116,19 +118,18 @@ def create_invoice(res_id):
     c.setFont('Calibri', 11)
     c.drawString(440, 760, str(r.count))
 
-    c.line(20, 620, 500, 620)
-    c.line(20, 620, 20, 545)
-    c.line(20, 545, 500, 545)
-    c.line(500, 545, 500, 620)
-    c.line(20, 590, 500, 590)
+    c.line(107, 620, 587, 620) #107 Startwert = +87
+    c.line(107, 620, 107, 545)
+    c.line(107, 545, 587, 545)
+    c.line(587, 545, 587, 620)
+    c.line(107, 590, 587, 590)
     c.line(150, 620, 150, 545)
     c.line(400, 620, 400, 545)
-    c.line(20, 620, 594, 620)
 
     c.setFont('CalibriBold', 11)
-    c.drawString(30, 600, "Anzahl")
-    c.drawString(160, 600, "Beschreibung")
-    c.drawString(410, 600, "Preis")
+    c.drawString(117, 600, "Anzahl")
+    c.drawString(247, 600, "Beschreibung")
+    c.drawString(497, 600, "Preis")
 
     date_from = Date()
     date_from.string_to_model(r.dateFrom)
@@ -139,8 +140,8 @@ def create_invoice(res_id):
     c.setFont('Calibri', 11)
     c.drawString(30, 570, str(duration) + " Tage")
 
-    c.drawString(160, 570, "Ferienwohnung - Gartenstraße 17")
-    c.drawString(160, 555, "2,5 Zimmer, Küche, Bad")
-    c.drawString(410, 570, r.price + "€")
+    c.drawString(117, 570, "Ferienwohnung - Gartenstraße 17")
+    c.drawString(247, 555, "2,5 Zimmer, Küche, Bad")
+    c.drawString(497, 570, r.price + "€")
 
     c.save()

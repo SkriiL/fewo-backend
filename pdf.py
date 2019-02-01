@@ -106,7 +106,7 @@ def create_invoice(res_id):
                    height=20)
     c.drawString(300, 730, "Personenzahl")
     form.textfield(name="count", tooltip="Personenzahl", x=390, y=725, borderStyle="inset", borderColor=black,
-                   fontName="Courier", fillColor=white, width=150, textColor=black, forceBorder=True, value=r.count,
+                   fontName="Courier", fillColor=white, width=150, textColor=black, forceBorder=True, value=str(r.count),
                    fontSize=14, height=20)
     c.drawString(10, 670, "Anzahl")
     c.drawString(200, 670, "Beschreibung")

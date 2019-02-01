@@ -120,7 +120,7 @@ def create_invoice(res_id):
     c.line(20, 620, 20, 535)
     c.line(20, 535, 500, 535)
     c.line(500, 535, 500, 620)
-    c.line(20, 600, 500, 600)
+    c.line(20, 600, 500, 580)
 
     c.drawString(30, 600, "Anzahl")
     c.drawString(160, 600, "Beschreibung")

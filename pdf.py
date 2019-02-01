@@ -109,7 +109,7 @@ def create_invoice(res_id):
                    fontName="Courier", fillColor=white, width=300, textColor=black, forceBorder=True, value=str(r.count),
                    fontSize=14, height=20)
     c.drawString(20, 600, "Anzahl")
-    c.drawString(100, 600, "Beschreibung")
+    c.drawString(150, 600, "Beschreibung")
     c.drawString(400, 600, "Preis")
 
     date_from = Date()

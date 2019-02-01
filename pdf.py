@@ -102,11 +102,16 @@ def create_invoice(res_id):
     c.drawRightString(538, 740, "info@fewogrimm.de")
     c.drawRightString(538, 728, "www.fewogrimm.de")
 
+    c.setFont('CalibriBold', 11)
+    c.drawString(58, 716, "Rechnungsadresse")
+    c.setFont("Calibri", 11)
+    c.drawRightString(58, 704, r.companyName)
+    c.drawRightString(58, 692, r.billStreet + " " + r.billHouseNumber)
+    c.drawRightString(58, 680, r.billPostalCode + " " + r.billCity)
+    c.drawRightString(58, 668, r.billCountry)
+
     c.setFont('CalibriBold', 13)
     c.drawString(58, 615, "Rechnung")
-
-    c.setFont('Calibri', 11)
-
     c.setFont('CalibriBold', 11)
     c.drawString(58, 590, "Rechnungsnummer")
     c.setFont('Calibri', 11)

@@ -109,7 +109,7 @@ def create_invoice(res_id):
                    fontName="Courier", fillColor=white, width=300, textColor=black, forceBorder=True, value=str(r.count),
                    fontSize=14, height=20)
     c.drawString(10, 600, "Anzahl")
-    c.drawString(200, 600, "Beschreibung")
+    c.drawString(100, 600, "Beschreibung")
     c.drawString(400, 600, "Preis")
 
     date_from = Date()
@@ -117,10 +117,10 @@ def create_invoice(res_id):
     date_to = Date()
     date_to.string_to_model(r.dateTo)
     duration = date_from.get_duration(date_to)
-    c.drawString(10, 570, str(duration))
+    c.drawString(10, 570, str(duration) + " Tage")
 
     c.drawString(200, 570, "Ferienwohnung - Gartenstraße 17")
-    c.drawString(200, 570, "2,5 Zimmer, Küche, Bad")
-    c.drawString(400, 570, r.price)
+    c.drawString(200, 540, "2,5 Zimmer, Küche, Bad")
+    c.drawString(400, 570, r.price + "€")
 
     c.save()

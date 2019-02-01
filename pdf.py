@@ -87,6 +87,10 @@ def create_invoice(res_id):
     pdfmetrics.registerFont(TTFont('CalibriBold', "CALIBRIB.TTF"))
 
     form = c.acroForm
+    c.setFont("CalibriBold", 14)
+    c.drawString(58, 800, "Ferienwohnung Grimm")
+    c.setFont("Calibri", 11)
+    c.drawString(58, 780, "Ferienwohnung - Monteurwohnung")
 
     c.setFont('CalibriBold', 13)
     c.drawString(58, 715, "Rechnung")

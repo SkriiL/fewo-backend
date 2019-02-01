@@ -44,14 +44,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="13173" />
+          <entry key="py" value="13180" />
           <entry key="txt" value="374" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="374" />
-          <entry key="Python" value="13173" />
+          <entry key="Python" value="13180" />
         </counts>
       </usages-collector>
     </session>
@@ -355,20 +355,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545479472885</updated>
-    </task>
-    <task id="LOCAL-00027" summary="#16 rechnungsadresse + staatsangehörigkeit auf reservierung">
-      <created>1548760497632</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1548760497632</updated>
-    </task>
-    <task id="LOCAL-00028" summary="#17 pdf erzeugen">
-      <created>1548774461216</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1548774461216</updated>
     </task>
     <task id="LOCAL-00029" summary="#17 pdf erzeugen">
       <created>1548774901054</created>
@@ -699,7 +685,21 @@
       <option name="project" value="LOCAL" />
       <updated>1549041054523</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="#21 rechnung pdf">
+      <created>1549041089265</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1549041089265</updated>
+    </task>
+    <task id="LOCAL-00077" summary="#21 rechnung pdf">
+      <created>1549041203351</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1549041203351</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="ToolWindowManager">

@@ -79,8 +79,8 @@ def create_invoice(res_id):
     r = Reservation()
     r.values_to_model(res)
     c = canvas.Canvas('/var/www/html/assets/requestInvoice.pdf')
-
-    c.setFont('Arial', 12)
+    print(c.getAvailableFonts())
+    c.setFont('Courier', 12)
     c.drawString(20, 815, "Rechnung")
     form = c.acroForm
 

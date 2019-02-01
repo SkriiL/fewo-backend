@@ -85,17 +85,17 @@ def create_invoice(res_id):
     form = c.acroForm
 
     c.drawString(20, 790, "Rechnungsnummer")
-    c.drawString(170, 790, "")
+    c.drawString(140, 790, "1")
     c.drawString(320, 790, "Datum")
-    c.drawString(470, 790, Date.get_current())
+    c.drawString(440, 790, Date.get_current())
     c.drawString(20, 760, "Anreise")
-    c.drawString(170, 760, r.dateFrom)
+    c.drawString(140, 760, r.dateFrom)
     c.drawString(320, 760, "Abreise")
-    c.drawString(470, 760, r.dateTo)
+    c.drawString(440, 760, r.dateTo)
     c.drawString(20, 730, "Gastname")
-    c.drawString(170, 730, r.name)
+    c.drawString(140, 730, r.name)
     c.drawString(320, 730, "Personenzahl")
-    c.drawString(470, 730, str(r.count))
+    c.drawString(440, 730, str(r.count))
     form.textfield(name="name", tooltip="Gastname", x=150, y=695, borderStyle="inset", borderColor=black,
                    fontName="Courier", fillColor=white, width=300, textColor=black, forceBorder=True, value=r.name,
                    fontSize=14, height=20)

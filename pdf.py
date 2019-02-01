@@ -163,4 +163,8 @@ def create_invoice(res_id):
     c.drawString(198, 455, "2,5 Zimmer, Küche, Bad")
     c.drawString(448, 470, r.price + "€")
 
+    c.drawString(58, 440,
+                 "Kein Ausweis der Umsatzsteuer aufgrund der Anwendung deer Kleinunternehmerregelung (§ 19 UStG)")
+    c.drawString(58, 510, "Wir danken recht herzlich für ihren Besuch und wünschen Ihnen eine angenehme Heimreise.")
+
     c.save()

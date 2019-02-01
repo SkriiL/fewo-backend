@@ -5,7 +5,7 @@ from reportlab.lib.colors import grey, black, white, lightgrey
 from reservations import get_single, Reservation
 from date import Date
 
-#LENGTH 595 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#LEN * 842 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 def create_registration_form(res_id):
@@ -164,7 +164,9 @@ def create_invoice(res_id):
     c.drawString(448, 470, r.price + "€")
 
     c.drawString(58, 418,
-                 "Kein Ausweis der Umsatzsteuer aufgrund der Anwendung deer Kleinunternehmerregelung (§ 19 UStG)")
+                 "Kein Ausweis der Umsatzsteuer aufgrund der Anwendung der Kleinunternehmerregelung (§ 19 UStG).")
     c.drawString(58, 388, "Wir danken recht herzlich für ihren Besuch und wünschen Ihnen eine angenehme Heimreise.")
+
+    c.drawCentredString(0, 42, "Ferienwohnung Grimm | Mühlstraße 4 | 63579 Freigericht")
 
     c.save()

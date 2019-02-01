@@ -85,42 +85,42 @@ def create_invoice(res_id):
     form = c.acroForm
 
     c.drawString(20, 790, "Rechnungsnummer")
-    form.textfield(name="invoiceNumber", tooltip="Rechnungsnummer", x=100, y=785, borderStyle="inset", borderColor=black, fontName="Courier",
-                   fillColor=white, width=150, textColor=black, forceBorder=True, value='', fontSize=14, height=20)
-    c.drawString(300, 790, "Datum")
-    form.textfield(name="date", tooltip="Datum", x=390, y=785, borderStyle="inset", borderColor=black, fontName="Courier",
-                   fillColor=white, width=150, textColor=black, forceBorder=True, value=Date.get_current(), fontSize=14, height=20)
-    c.drawString(20, 760, "Anreise")
-    form.textfield(name="dateFrom", tooltip="Anreise", x=100, y=755, borderStyle="inset", borderColor=black,
+    form.textfield(name="invoiceNumber", tooltip="Rechnungsnummer", x=150, y=785, borderStyle="inset", borderColor=black, fontName="Courier",
+                   fillColor=white, width=300, textColor=black, forceBorder=True, value='', fontSize=14, height=20)
+    c.drawString(20, 760, "Datum")
+    form.textfield(name="date", tooltip="Datum", x=150, y=755, borderStyle="inset", borderColor=black, fontName="Courier",
+                   fillColor=white, width=300, textColor=black, forceBorder=True, value=Date.get_current(), fontSize=14, height=20)
+    c.drawString(20, 730, "Anreise")
+    form.textfield(name="dateFrom", tooltip="Anreise", x=150, y=725, borderStyle="inset", borderColor=black,
                    fontName="Courier",
-                   fillColor=white, width=150, textColor=black, forceBorder=True, value=r.dateFrom, fontSize=14,
+                   fillColor=white, width=300, textColor=black, forceBorder=True, value=r.dateFrom, fontSize=14,
                    height=20)
-    c.drawString(300, 760, "Gastname")
-    form.textfield(name="name", tooltip="Gastname", x=390, y=755, borderStyle="inset", borderColor=black,
-                   fontName="Courier", fillColor=white, width=150, textColor=black, forceBorder=True, value=r.name,
+    c.drawString(20, 700, "Gastname")
+    form.textfield(name="name", tooltip="Gastname", x=150, y=695, borderStyle="inset", borderColor=black,
+                   fontName="Courier", fillColor=white, width=300, textColor=black, forceBorder=True, value=r.name,
                    fontSize=14, height=20)
-    c.drawString(20, 730, "Abreise")
-    form.textfield(name="dateTo", tooltip="Abreise", x=100, y=725, borderStyle="inset", borderColor=black,
+    c.drawString(20, 670, "Abreise")
+    form.textfield(name="dateTo", tooltip="Abreise", x=150, y=665, borderStyle="inset", borderColor=black,
                    fontName="Courier",
-                   fillColor=white, width=150, textColor=black, forceBorder=True, value=r.dateTo, fontSize=14,
+                   fillColor=white, width=300, textColor=black, forceBorder=True, value=r.dateTo, fontSize=14,
                    height=20)
-    c.drawString(300, 730, "Personenzahl")
-    form.textfield(name="count", tooltip="Personenzahl", x=390, y=725, borderStyle="inset", borderColor=black,
-                   fontName="Courier", fillColor=white, width=150, textColor=black, forceBorder=True, value=str(r.count),
+    c.drawString(20, 640, "Personenzahl")
+    form.textfield(name="count", tooltip="Personenzahl", x=150, y=635, borderStyle="inset", borderColor=black,
+                   fontName="Courier", fillColor=white, width=300, textColor=black, forceBorder=True, value=str(r.count),
                    fontSize=14, height=20)
-    c.drawString(10, 670, "Anzahl")
-    c.drawString(200, 670, "Beschreibung")
-    c.drawString(400, 670, "Preis")
+    c.drawString(10, 600, "Anzahl")
+    c.drawString(200, 600, "Beschreibung")
+    c.drawString(400, 600, "Preis")
 
     date_from = Date()
     date_from.string_to_model(r.dateFrom)
     date_to = Date()
     date_to.string_to_model(r.dateTo)
     duration = date_from.get_duration(date_to)
-    c.drawString(10, 640, str(duration))
+    c.drawString(10, 570, str(duration))
 
-    c.drawString(200, 640, "Ferienwohnung - Gartenstraße 17")
-    c.drawString(200, 620, "2,5 Zimmer, Küche, Bad")
-    c.drawString(400, 640, r.price)
+    c.drawString(200, 570, "Ferienwohnung - Gartenstraße 17")
+    c.drawString(200, 570, "2,5 Zimmer, Küche, Bad")
+    c.drawString(400, 570, r.price)
 
     c.save()

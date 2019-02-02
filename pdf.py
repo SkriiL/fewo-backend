@@ -70,7 +70,7 @@ def create_registration_form(res_id):
     c.drawString(497, 660, str(r.count))
     c.line(40, 644, 555, 644)
     c.line(40, 804, 40, 644)
-    c.line(555, 804, 555, 644)
+    c.line(555, 804, 555, 754)
     c.line(210, 804, 210, 644)
     c.line(387, 804, 387, 734)
     c.line(387, 714, 387, 694)

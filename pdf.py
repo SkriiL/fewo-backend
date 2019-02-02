@@ -85,7 +85,8 @@ def create_registration_form(res_id):
 
     c.line(40, 560, 555, 560)
     c.setFont("CalibriBold", 11)
-    c.drawString(50, 540, "Rechnungsanschrift / billing address")
+    c.drawString(50, 540, "Rechnungsanschrift /")
+    c.drawString(50, 530, "billing address.")
     c.drawString(220, 540, "Die Privatanschrift stimmt mit der Rechnungsanschrift überein. /")
     c.drawString(220, 530, "The home address matches the billing address.")
     c.setFont("Calibri", 11)
@@ -97,12 +98,14 @@ def create_registration_form(res_id):
     c.drawString(50, 500, "Firma / company")
     if not r.isSameAsNormal:
         c.drawString(220, 500, r.companyName)
-    c.line(40, 494, 555, 594)
+    c.line(40, 494, 555, 494)
     c.drawString(50, 480, "Firmenadresse / company address")
     if not r.isSameAsNormal:
         c.drawString(220, 480, r.billStreet + " " + r.billHouseNumber + " | " + r.billPostalCode + " " + r.billCity + " | " + r.billCountry)
     c.line(40, 474, 555, 474)
     c.line(210, 560, 210, 474)
+    c.line(50, 560, 50, 474)
+    c.line(555, 560, 555, 474)
 
     c.save()
 

@@ -126,7 +126,7 @@ def create_invoice(res_id):
     c.setFont('CalibriBold', 11)
     c.drawString(58, 590, "Rechnungsnummer")
     c.setFont('Calibri', 11)
-    c.drawString(178, 590, "1")
+    c.drawString(178, 590, str(r.invoiceNumber))
     c.setFont('CalibriBold', 11)
     c.drawString(358, 590, "Datum")
     c.setFont('Calibri', 11)

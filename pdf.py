@@ -92,6 +92,16 @@ def create_invoice(res_id):
     res = get_single(int(res_id))
     r = Reservation()
     r.values_to_model(res)
+
+    if r.invoiceType == "default":
+        if r.invoiceNumber == -1:
+            file = open("invoice.number", "r")
+            r.invoiceNumber = int(file.read()) + 1
+            file.close()
+            file = open("invoice.number", "w")
+            file.write(str(r.invoiceNumber))
+            file.close()
+
     c = canvas.Canvas('/var/www/html/assets/requestInvoice.pdf')
 
     pdfmetrics.registerFont(TTFont('Calibri', "Calibri.ttf"))

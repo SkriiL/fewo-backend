@@ -44,18 +44,10 @@ def add(res_str, id=-1):
                 break
 
     res = res_str.split('|')
-    inv_num = -1
-    if res[21] == "default":
-        file = open("invoice.number", "r")
-        inv_num = int(file.read()) +  1
-        file.close()
-        file = open("invoice.number", "w")
-        file.write(str(inv_num))
-        file.close()
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
     params = (res[0], res[1], res[2], int(res[3]), res[4], res[5], res[6], res[7], res[8], res[9], res[10], res[11],
-              id, res[13], res[14], res[15], res[16], res[17], res[18], res[19], res[20], res[21], inv_num)
+              id, res[13], res[14], res[15], res[16], res[17], res[18], res[19], res[20], res[21], -1)
     c.execute('INSERT INTO reservations VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', params)
     conn.commit()
     conn.close()

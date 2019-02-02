@@ -55,7 +55,7 @@ def create_registration_form(res_id):
     c.line(40, 714, 555, 714)
     c.drawString(50, 700, "PLZ, Ort / postal code, city")
     c.drawString(220, 700, r.postalCode + " " + r.city)
-    c.drawString(397, 700, "Land / county")
+    c.drawString(397, 700, "Land / country")
     c.drawString(494, 700, r.country)
     c.line(40, 694, 555, 694)
     c.drawString(50, 680, "Staatsangehörigkeit / nationality")

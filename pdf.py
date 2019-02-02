@@ -5,7 +5,7 @@ from reportlab.lib.colors import grey, black, white, lightgrey
 from reservations import get_single, Reservation
 from date import Date
 
-#LEN * 842 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# 595 * 842 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
 def make_nice(text):

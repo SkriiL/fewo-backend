@@ -35,13 +35,15 @@ def create_registration_form(res_id):
     form = c.acroForm
 
     c.line(40, 800, 555, 800)
-
     c.setFont('CalibriBold', 11)
-    c.drawString(50, 790, "Privatanschrift / Home address")
-    c.drawString(200, 790, "Datum Anreise /")
-    c.drawString(200, 780, "Date of arrival")
-    c.drawString(400, 790, "Datum Abreise /")
-    c.drawString(400, 780, "Date of departure")
+    c.drawString(50, 780, "Privatanschrift / Home address")
+    c.drawString(200, 780, "Datum Anreise /")
+    c.drawString(200, 770, "Date of arrival")
+    c.drawString(300, 780, r.dateFrom)
+    c.drawString(377, 780, "Datum Abreise /")
+    c.drawString(377, 770, "Date of departure")
+    c.drawString(477, 780, r.dateFrom)
+    c.line(40, 750, 555, 750)
     c.save()
 
 

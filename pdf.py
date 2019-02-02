@@ -104,7 +104,7 @@ def create_registration_form(res_id):
         c.drawString(220, 480, r.billStreet + " " + r.billHouseNumber + " | " + r.billPostalCode + " " + r.billCity + " | " + r.billCountry)
     c.line(40, 474, 555, 474)
     c.line(210, 560, 210, 474)
-    c.line(50, 560, 50, 474)
+    c.line(40, 560, 40, 474)
     c.line(555, 560, 555, 474)
 
     c.save()

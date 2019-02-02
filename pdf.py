@@ -67,7 +67,7 @@ def create_registration_form(res_id):
     c.drawString(220, 660, "")
     c.drawString(330, 660, "Anzahl der Mitreisenden /")
     c.drawString(330, 650, "number of accompanying persons")
-    c.drawString(494, 660, str(r.count))
+    c.drawString(494, 660, str(r.count - 1))
     c.line(40, 644, 555, 644)
     c.line(40, 804, 40, 644)
     c.line(555, 804, 555, 644)

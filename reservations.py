@@ -49,7 +49,7 @@ def add(res_str, id=-1):
         inv_num = int(file.read()) +  1
         file.close()
         file = open("invoice.number", "w")
-        file.write(inv_num)
+        file.write(str(inv_num))
         file.close()
     conn = sqlite3.connect('db.db')
     c = conn.cursor()

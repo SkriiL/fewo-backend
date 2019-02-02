@@ -46,14 +46,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="number" value="1" />
-          <entry key="py" value="15762" />
-          <entry key="txt" value="441" />
+          <entry key="py" value="16453" />
+          <entry key="txt" value="468" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="442" />
-          <entry key="Python" value="15762" />
+          <entry key="PLAIN_TEXT" value="469" />
+          <entry key="Python" value="16453" />
         </counts>
       </usages-collector>
     </session>
@@ -90,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pdf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+            <state relative-caret-position="578">
+              <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -350,27 +350,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545479472885</updated>
-    </task>
-    <task id="LOCAL-00062" summary="#21 rechnung pdf">
-      <created>1549039687802</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1549039687802</updated>
-    </task>
-    <task id="LOCAL-00063" summary="#21 rechnung pdf">
-      <created>1549039927942</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1549039927942</updated>
-    </task>
-    <task id="LOCAL-00064" summary="#21 rechnung pdf">
-      <created>1549040062034</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1549040062034</updated>
     </task>
     <task id="LOCAL-00065" summary="#21 rechnung pdf">
       <created>1549040140146</created>
@@ -694,7 +673,28 @@
       <option name="project" value="LOCAL" />
       <updated>1549111873736</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="#24 style registration form">
+      <created>1549113909583</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1549113909583</updated>
+    </task>
+    <task id="LOCAL-00112" summary="#24 style registration form">
+      <created>1549113987141</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1549113987141</updated>
+    </task>
+    <task id="LOCAL-00113" summary="#24 style registration form">
+      <created>1549114204144</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1549114204144</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -745,7 +745,8 @@
     <MESSAGE value="#21 invoice pdf" />
     <MESSAGE value="#23 invoice type" />
     <MESSAGE value="#22 invoiceNumber" />
-    <option name="LAST_COMMIT_MESSAGE" value="#22 invoiceNumber" />
+    <MESSAGE value="#24 style registration form" />
+    <option name="LAST_COMMIT_MESSAGE" value="#24 style registration form" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/aiohttp/__init__.py">
@@ -850,8 +851,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pdf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="43" column="45" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+        <state relative-caret-position="578">
+          <caret line="64" column="28" lean-forward="true" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

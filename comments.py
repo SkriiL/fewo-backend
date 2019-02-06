@@ -9,7 +9,7 @@ def get_all():
     comments_dict = []
     conn.close()
     for p in comments:
-        comments_dict.append({'name': p[0], 'text': p[1], 'id': p[2]})
+        comments_dict.append({'name': p[0], 'text': p[1], "dateCreated": p[2], 'id': p[3]})
     return comments_dict
 
 
@@ -27,8 +27,8 @@ def add(comment_str, _id=-1):
     comment = comment_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    params = (comment[0], comment[1], _id)
-    c.execute('INSERT INTO comments VALUES(?, ?, ?)', params)
+    params = (comment[0], comment[1], comment[2], _id)
+    c.execute('INSERT INTO comments VALUES(?, ?, ?, ?)', params)
     conn.commit()
     conn.close()
 
@@ -44,5 +44,5 @@ def delete(_id):
 
 def edit(comment_str):
     comment = comment_str.split('|')
-    delete(int(comment[2]))
-    add(comment_str, int(comment[2]))
+    delete(int(comment[3]))
+    add(comment_str, int(comment[3]))

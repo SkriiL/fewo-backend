@@ -8,6 +8,7 @@ import eventlet
 import login
 import prices
 import pdf
+import comments
 
 app = Flask(__name__)
 #app.config['SECRET_KEY'] = "secret!"
@@ -116,6 +117,34 @@ def edit_price(p):
 @sio.on('deletePrice')
 def delete_price(id):
     prices.delete(int(id))
+
+
+# !!!!!!!!!!!!!!!!!!!!!!!!! COMMENTS !!!!!!!!!!!!!!!!!!!
+
+
+@sio.on('getAllComments')
+def get_all_comments(sid):
+    cs = comments.get_all()
+    send_comments(cs)
+
+
+def send_comments(cs):
+    emit('comments', cs)
+
+
+@sio.on('addComment')
+def add_comment(c):
+    comments.add(comment_str=c)
+
+
+@sio.on('editComment')
+def edit_comment(c):
+    comments.edit(c)
+
+
+@sio.on('deleteComment')
+def delete_comment(id):
+    comments.delete(int(id))
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

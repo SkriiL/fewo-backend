@@ -16,6 +16,14 @@ def get_all():
 def add(price_str, _id=-1):
     if _id == -1:
         _id = len(get_all()) + 1
+        prices = get_all()
+        ids = [p['id'] for p in prices]
+        correct = False
+        while not correct:
+            if _id in ids:
+                _id += 1
+            else:
+                break
     price = price_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()

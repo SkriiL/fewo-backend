@@ -200,7 +200,7 @@ def create_invoice(res_id):
     duration = date_from.get_duration(date_to)
 
     c.setFont('Calibri', 11)
-    c.drawString(68, 470, str(duration) + " Tage")
+    c.drawString(68, 470, str(duration) + " Übernachtungen")
 
     c.drawString(198, 470, "Ferienwohnung - Gartenstraße 17")
     c.drawString(198, 455, "2,5 Zimmer, Küche, Bad")

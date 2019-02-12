@@ -20,7 +20,7 @@ class Date:
         if self.month == date_to.month:
             return date_to.day - self.day
         else:
-            return month_lengths[self.month - 1] + 1 - self.day + date_to.day
+            return month_lengths[self.month - 1] - self.day + date_to.day
 
     @staticmethod
     def is_leap_year(year):

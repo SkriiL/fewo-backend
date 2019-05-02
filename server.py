@@ -82,7 +82,7 @@ def create_form(id):
 
 
 @sio.on('createInvoice')
-def create_form(id):
+def create_invoice(id):
     pdf.create_invoice(id)
     success()
 

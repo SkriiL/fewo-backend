@@ -48,8 +48,8 @@ def add(res_str, id=-1):
     c = conn.cursor()
     invoice_number = -1
     try:
-        if res[21] is not None:
-            invoice_number = res[21]
+        if res[22] is not None:
+            invoice_number = res[22]
     except IndexError:
         invoice_number = -1
     params = (res[0], res[1], res[2], int(res[3]), res[4], res[5], res[6], res[7], res[8], res[9], res[10], res[11],

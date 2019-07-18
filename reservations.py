@@ -68,6 +68,19 @@ def edit(res_str):
     add(res_str, int(res[12]))
 
 
+def set_invoice_number(id, invoice_number):
+    res = get_single(id)
+    res['invoiceNumber'] = invoice_number
+    res_arr = [res["name"], res["dateFrom"], res["dateTo"], res["count"], res["price"], res["email"], res["phone"],
+               res["street"], res["houseNumber"], res["city"], res["postalCode"], res["country"], res["id"],
+               res["nationality"], res["isSameAsNormal"], res["billStreet"], res["billHouseNumber"], res["billCity"],
+               res["billPostalCode"], res["billCountry"], res["companyName"], res["invoiceType"], res["invoiceNumber"]]
+    res_str = ""
+    for i in res_arr:
+        res_str += i + "|"
+    delete(id)
+    add(res_str, id)
+
 class Reservation:
     def __init__(self):
         self.name = ""

@@ -77,7 +77,7 @@ def set_invoice_number(id, invoice_number):
                res["billPostalCode"], res["billCountry"], res["companyName"], res["invoiceType"], res["invoiceNumber"]]
     res_str = ""
     for i in res_arr:
-        res_str += i + "|"
+        res_str += str(i) + "|"
     delete(id)
     add(res_str, id)
 

@@ -88,6 +88,7 @@ def set_invoice_number(id, invoice_number):
     delete(id)
     add(res_str, id)
 
+
 class Reservation:
     def __init__(self):
         self.name = ""

@@ -12,7 +12,8 @@ def get_all():
         res_dir.append({'name': r[0], 'dateFrom': r[1], 'dateTo': r[2], 'count': r[3], 'price': r[4], 'email': r[5], 'phone': r[6],
                         'street': r[7], 'houseNumber': r[8], 'city': r[9], 'postalCode': r[10], 'country': r[11], 'id': r[12],
                         'nationality': r[13], 'isSameAsNormal': r[14], 'billStreet': r[15], 'billHouseNumber': r[16],
-                        'billCity': r[17], 'billPostalCode': r[18], 'billCountry': r[19], 'companyName': r[20], "invoiceType": r[21]})
+                        'billCity': r[17], 'billPostalCode': r[18], 'billCountry': r[19], 'companyName': r[20], "invoiceType": r[21],
+                        "invoiceNumber": r[22]})
     return res_dir
 
 

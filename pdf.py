@@ -210,7 +210,9 @@ def create_invoice(res_id):
 
     c.drawString(58, 418,
                  "Kein Ausweis der Umsatzsteuer aufgrund der Anwendung der Kleinunternehmerregelung (§ 19 UStG).")
-    c.drawString(58, 388, "Wir danken recht herzlich für ihren Besuch und wünschen Ihnen eine angenehme Heimreise.")
+    if r.invoiceType == 'booking':
+        c.drawString(58, 398, "Abrechnung und Bezahlung via booking.com")
+    c.drawString(58, 378, "Wir danken recht herzlich für ihren Besuch und wünschen Ihnen eine angenehme Heimreise.")
 
     c.drawCentredString(289, 66, "Ferienwohnung Grimm | Mühlstraße 4 | 63579 Freigericht")
     c.drawCentredString(289, 54, "+49 6055-6302 | info@fewogrimm.de | www.fewogrimm.de")

@@ -25,7 +25,6 @@ def get_current(year):
     arr = c.fetchone()
     conn.close()
     num = 1
-    print(arr)
     if arr is not None:
         num = int(arr[1]) + 1
     new(int(year), num)
@@ -41,8 +40,3 @@ def get_invoice_number():
     year = int(get_year())
     num = get_current(year)
     return "RE-" + str(year) + "-" + num
-
-
-if __name__ == '__main__':
-    for i in range(0, 10):
-        print(get_invoice_number())

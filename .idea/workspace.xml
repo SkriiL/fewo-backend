@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a67b104e-4105-4c77-a109-3168e497c488" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/invoice_number.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fewo-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fewo-backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.db" beforeDir="false" afterPath="$PROJECT_DIR$/db.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/pdf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservations.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/invoice_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/invoice_number.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,20 +37,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reservations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="115" column="31" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+            <state relative-caret-position="166">
+              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/invoice_number.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="324">
+              <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -146,9 +140,9 @@
         <option value="$PROJECT_DIR$/date.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/invoice.number" />
-        <option value="$PROJECT_DIR$/invoice_number.py" />
         <option value="$PROJECT_DIR$/pdf.py" />
         <option value="$PROJECT_DIR$/reservations.py" />
+        <option value="$PROJECT_DIR$/invoice_number.py" />
       </list>
     </option>
   </component>
@@ -327,13 +321,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545479472885</updated>
-    </task>
-    <task id="LOCAL-00095" summary="db update">
-      <created>1549061826548</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1549061826548</updated>
     </task>
     <task id="LOCAL-00096" summary="#21 invoice pdf">
       <created>1549062421233</created>
@@ -671,7 +658,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563715771750</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="#78 neue Rechnungsnummermethode">
+      <created>1576877639125</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1576877639125</updated>
+    </task>
+    <option name="localTasksCounter" value="145" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -698,7 +692,6 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="reservation working" />
     <MESSAGE value="#4 delete reservations" />
     <MESSAGE value="#6 crypto&#10;#5 edit reservations" />
     <MESSAGE value="some fixes" />
@@ -723,7 +716,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="booking" />
     <MESSAGE value="db fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="db fix" />
+    <MESSAGE value="#78 neue Rechnungsnummermethode" />
+    <option name="LAST_COMMIT_MESSAGE" value="#78 neue Rechnungsnummermethode" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Anaconda3/Lib/site-packages/aiohttp/__init__.py">
@@ -808,13 +802,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/invoice_number.py">
+    <entry file="file://$PROJECT_DIR$/reservations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="166">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
         </state>
       </provider>
     </entry>
@@ -828,10 +819,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reservations.py">
+    <entry file="file://$PROJECT_DIR$/invoice_number.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="115" column="31" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+        <state relative-caret-position="324">
+          <caret line="41" column="40" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

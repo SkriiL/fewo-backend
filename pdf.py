@@ -4,6 +4,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.colors import grey, black, white, lightgrey
 from reservations import get_single, Reservation, set_invoice_number
 from date import Date
+from invoice_number import get_invoice_number, get_year
 
 # 595 * 842 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -117,13 +118,17 @@ def create_invoice(res_id):
 
     if r.invoiceType == "default" or r.invoiceType == "booking":
         if r.invoiceNumber == -1:
-            file = open("invoice.number", "r")
-            r.invoiceNumber = int(file.read()) + 1
-            file.close()
-            file = open("invoice.number", "w")
-            file.write(str(r.invoiceNumber))
-            file.close()
-            set_invoice_number(res_id, r.invoiceNumber)
+            if int(get_year()) == 2019:
+                file = open("invoice.number", "r")
+                r.invoiceNumber = int(file.read()) + 1
+                file.close()
+                file = open("invoice.number", "w")
+                file.write(str(r.invoiceNumber))
+                file.close()
+                set_invoice_number(res_id, r.invoiceNumber)
+            else:
+                r.invoiceNumber = get_invoice_number()
+                set_invoice_number(res_id, r.invoiceNumber)
 
 
     c = canvas.Canvas('/var/www/html/assets/requestInvoice.pdf')

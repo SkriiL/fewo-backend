@@ -113,7 +113,7 @@ class Reservation:
         self.billCountry = ""
         self.companyName = ""
         self.invoiceType = ""
-        self.invoiceNumber = -1
+        self.invoiceNumber = ""
 
     def values_to_model(self, res):
         self.name = res["name"]

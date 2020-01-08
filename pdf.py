@@ -117,7 +117,7 @@ def create_invoice(res_id):
     r.values_to_model(res)
 
     if r.invoiceType == "default" or r.invoiceType == "booking":
-        if r.invoiceNumber == -1:
+        if r.invoiceNumber == "-1":
             if int(get_year()) == 2019:
                 file = open("invoice.number", "r")
                 r.invoiceNumber = int(file.read()) + 1

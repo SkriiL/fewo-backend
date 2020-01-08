@@ -47,12 +47,12 @@ def add(res_str, id=-1):
     res = res_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    invoice_number = -1
+    invoice_number = "-1"
     try:
         if res[22] is not None:
             invoice_number = res[22]
     except IndexError:
-        invoice_number = -1
+        invoice_number = "-1"
     params = (res[0], res[1], res[2], int(res[3]), res[4], res[5], res[6], res[7], res[8], res[9], res[10], res[11],
               id, res[13], res[14], res[15], res[16], res[17], res[18], res[19], res[20], res[21], invoice_number)
     c.execute('INSERT INTO reservations VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', params)

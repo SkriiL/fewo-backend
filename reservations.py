@@ -73,8 +73,8 @@ def delete(id):
 
 def edit(res_str):
     res = res_str.split('|')
-    delete(int(res[12]))
     invoice_num = get_single(int(res[12]))['invoiceNumber']
+    delete(int(res[12]))
     add(res_str, int(res[12]), invoice_num)
 
 

@@ -32,7 +32,7 @@ def get_single(id):
     return res
 
 
-def add(res_str, id=-1):
+def add(res_str, id=-1, inv_num=-1):
     if id == -1:
         id = len(get_all()) + 1
         ress = get_all()
@@ -53,6 +53,8 @@ def add(res_str, id=-1):
             invoice_number = res[22]
     except IndexError:
         invoice_number = "-1"
+    if inv_num != -1 and inv_num != '-1':
+        invoice_number = inv_num
     params = (res[0], res[1], res[2], int(res[3]), res[4], res[5], res[6], res[7], res[8], res[9], res[10], res[11],
               id, res[13], res[14], res[15], res[16], res[17], res[18], res[19], res[20], res[21], invoice_number)
     c.execute('INSERT INTO reservations VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', params)
@@ -72,7 +74,8 @@ def delete(id):
 def edit(res_str):
     res = res_str.split('|')
     delete(int(res[12]))
-    add(res_str, int(res[12]))
+    invoice_num = get_single(int(res[12]))['invoiceNumber']
+    add(res_str, int(res[12]), invoice_num)
 
 
 def set_invoice_number(id, invoice_number):

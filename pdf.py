@@ -115,11 +115,8 @@ def create_invoice(res_id):
     res = get_single(int(res_id))
     r = Reservation()
     r.values_to_model(res)
-    print(r.invoiceNumber)
-
     if r.invoiceType == "default" or r.invoiceType == "booking":
         if r.invoiceNumber == "-1" or r.invoiceNumber == -1:
-            print("Hallo")
             if int(get_year()) == 2019:
                 file = open("invoice.number", "r")
                 r.invoiceNumber = int(file.read()) + 1
@@ -129,13 +126,8 @@ def create_invoice(res_id):
                 file.close()
                 set_invoice_number(res_id, r.invoiceNumber)
             else:
-                print(1)
                 r.invoiceNumber = get_invoice_number()
                 set_invoice_number(res_id, r.invoiceNumber)
-                print(r.invoiceNumber)
-
-    exit()
-
 
     c = canvas.Canvas('/var/www/html/assets/requestInvoice.pdf')
 
@@ -230,7 +222,3 @@ def create_invoice(res_id):
     c.drawCentredString(289, 42, "VR-Bank MKB eG | IBAN: DE54 5066 1639 0200 8720 32 | BIC: GENODEF1LSR")
 
     c.save()
-
-
-if __name__ == '__main__':
-    create_invoice(81)

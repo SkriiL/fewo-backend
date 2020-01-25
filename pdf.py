@@ -111,6 +111,19 @@ def create_registration_form(res_id):
     c.save()
 
 
+def fancy_price(price):
+    arr = price.split('.')
+    if len(arr) == 1:
+            return arr[0] + ",00"
+    elif len(arr) == 2:
+        if len(arr[1]) == 1:
+            return arr[0] + "," + arr[1] + "0"
+        elif len(arr[1]) == 2:
+            return arr[0] + "," + arr[1]
+    elif len(arr) == 0:
+        return ""
+
+
 def create_invoice(res_id):
     res = get_single(int(res_id))
     r = Reservation()
@@ -209,7 +222,7 @@ def create_invoice(res_id):
 
     c.drawString(198, 470, "Ferienwohnung - Gartenstraße 17")
     c.drawString(198, 455, "2,5 Zimmer, Küche, Bad")
-    c.drawString(448, 470, r.price + "€")
+    c.drawString(448, 470, fancy_price(r.price) + "€")
 
     c.drawString(58, 418,
                  "Kein Ausweis der Umsatzsteuer aufgrund der Anwendung der Kleinunternehmerregelung (§ 19 UStG).")

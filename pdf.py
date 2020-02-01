@@ -222,7 +222,7 @@ def create_invoice(res_id):
 
     c.drawString(198, 470, "Ferienwohnung - Gartenstraße 17")
     c.drawString(198, 455, "2,5 Zimmer, Küche, Bad")
-    c.drawString(448, 470, fancy_price(r.price) + "€")
+    c.drawString(448, 470, fancy_price(r.price) + " €")
 
     c.drawString(58, 418,
                  "Kein Ausweis der Umsatzsteuer aufgrund der Anwendung der Kleinunternehmerregelung (§ 19 UStG).")

@@ -1,4 +1,5 @@
 import sqlite3
+import date
 
 
 def get_all():
@@ -9,10 +10,11 @@ def get_all():
     conn.close()
     res_dir = []
     for r in reservations:
-        res_dir.append({'name': r[0], 'dateFrom': r[1], 'dateTo': r[2], 'count': r[3], 'price': r[4], 'email': r[5], 'phone': r[6],
-                        'street': r[7], 'houseNumber': r[8], 'city': r[9], 'postalCode': r[10], 'country': r[11], 'id': r[12],
-                        'nationality': r[13], 'isSameAsNormal': r[14], 'billStreet': r[15], 'billHouseNumber': r[16],
-                        'billCity': r[17], 'billPostalCode': r[18], 'billCountry': r[19], 'companyName': r[20], "invoiceType": r[21],
+        res_dir.append({'name': r[0], 'dateFrom': date.string_to_date(r[1]), 'dateTo': date.string_to_date(r[2]),
+                        'count': r[3], 'price': r[4], 'email': r[5], 'phone': r[6], 'street': r[7], 'houseNumber': r[8],
+                        'city': r[9], 'postalCode': r[10], 'country': r[11], 'id': r[12], 'nationality': r[13],
+                        'isSameAsNormal': r[14], 'billStreet': r[15], 'billHouseNumber': r[16], 'billCity': r[17],
+                        'billPostalCode': r[18], 'billCountry': r[19], 'companyName': r[20], "invoiceType": r[21],
                         "invoiceNumber": r[22]})
     return res_dir
 
@@ -23,16 +25,17 @@ def get_single(id):
     params = (int(id),)
     c.execute('SELECT * FROM reservations WHERE id=?', params)
     r = c.fetchone()
-    res = {'name': r[0], 'dateFrom': r[1], 'dateTo': r[2], 'count': r[3], 'price': r[4], 'email': r[5], 'phone': r[6],
-           'street': r[7], 'houseNumber': r[8], 'city': r[9], 'postalCode': r[10], 'country': r[11], 'id': r[12],
-           'nationality': r[13], 'isSameAsNormal': r[14], 'billStreet': r[15], 'billHouseNumber': r[16],
-           'billCity': r[17], 'billPostalCode': r[18], 'billCountry': r[19], 'companyName': r[20], "invoiceType": r[21],
-           'invoiceNumber': r[22]}
+    res = {'name': r[0], 'dateFrom': date.string_to_date(r[1]), 'dateTo': date.string_to_date(r[2]), 'count': r[3],
+           'price': r[4], 'email': r[5], 'phone': r[6], 'street': r[7], 'houseNumber': r[8], 'city': r[9],
+           'postalCode': r[10], 'country': r[11], 'id': r[12], 'nationality': r[13], 'isSameAsNormal': r[14],
+           'billStreet': r[15], 'billHouseNumber': r[16], 'billCity': r[17], 'billPostalCode': r[18],
+           'billCountry': r[19], 'companyName': r[20], "invoiceType": r[21], 'invoiceNumber': r[22]}
     conn.close()
     return res
 
 
-def add(res_str, id=-1, inv_num=-1):
+def add(res):
+    id = res["id"]
     if id == -1:
         id = len(get_all()) + 1
         ress = get_all()
@@ -43,20 +46,19 @@ def add(res_str, id=-1, inv_num=-1):
                 id += 1
             else:
                 break
-
-    res = res_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
     invoice_number = "-1"
     try:
-        if res[22] is not None:
+        if res["invoiceNumber"] is not None:
             invoice_number = res[22]
-    except IndexError:
+    except:
         invoice_number = "-1"
-    if inv_num != -1 and inv_num != '-1':
-        invoice_number = inv_num
-    params = (res[0], res[1], res[2], int(res[3]), res[4], res[5], res[6], res[7], res[8], res[9], res[10], res[11],
-              id, res[13], res[14], res[15], res[16], res[17], res[18], res[19], res[20], res[21], invoice_number)
+    params = (res["name"], date.date_to_string(res["dateFrom"]), date.date_to_string(res["dateTo"]), int(res["count"]),
+              res["price"], res["email"], res["phone"], res["street"], res["houseNumber"], res["city"],
+              res["postalCode"], res["country"], id, res["nationality"], res["isSameAsNormalString"], res["billStreet"],
+              res["billHouseNumber"], res["billCity"], res["billPostalCode"], res["billCountry"], res["companyName"],
+              res["invoiceType"], invoice_number)
     c.execute('INSERT INTO reservations VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', params)
     conn.commit()
     conn.close()
@@ -71,25 +73,16 @@ def delete(id):
     conn.close()
 
 
-def edit(res_str):
-    res = res_str.split('|')
-    invoice_num = get_single(int(res[12]))['invoiceNumber']
-    delete(int(res[12]))
-    add(res_str, int(res[12]), invoice_num)
+def edit(res):
+    delete(int(res["id"]))
+    add(res)
 
 
 def set_invoice_number(id, invoice_number):
     res = get_single(id)
     res['invoiceNumber'] = invoice_number
-    res_arr = [res["name"], res["dateFrom"], res["dateTo"], res["count"], res["price"], res["email"], res["phone"],
-               res["street"], res["houseNumber"], res["city"], res["postalCode"], res["country"], res["id"],
-               res["nationality"], res["isSameAsNormal"], res["billStreet"], res["billHouseNumber"], res["billCity"],
-               res["billPostalCode"], res["billCountry"], res["companyName"], res["invoiceType"], res["invoiceNumber"]]
-    res_str = ""
-    for i in res_arr:
-        res_str += str(i) + "|"
     delete(id)
-    add(res_str, id)
+    add(res)
 
 
 class Reservation:

@@ -5,6 +5,7 @@ from reportlab.lib.colors import grey, black, white, lightgrey
 from reservations import get_single, Reservation, set_invoice_number
 from date import Date
 from invoice_number import get_invoice_number, get_year
+import date
 
 # 595 * 842 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -41,12 +42,12 @@ def create_registration_form(res_id):
     c.drawString(220, 780, "Datum Anreise /")
     c.drawString(220, 770, "date of arrival")
     c.setFont("Calibri", 11)
-    c.drawString(320, 780, r.dateFrom)
+    c.drawString(320, 780, date.date_to_string(r.dateFrom))
     c.setFont('CalibriBold', 11)
     c.drawString(397, 780, "Datum Abreise /")
     c.drawString(397, 770, "date of departure")
     c.setFont("Calibri", 11)
-    c.drawString(497, 780, r.dateTo)
+    c.drawString(497, 780, date.date_to_string(r.dateTo))
     c.line(40, 754, 555, 754)
     c.drawString(50, 740, "Name / name")
     c.drawString(220, 740, r.name)
@@ -184,11 +185,11 @@ def create_invoice(res_id):
     c.setFont('CalibriBold', 11)
     c.drawString(58, 575, "Anreise")
     c.setFont('Calibri', 11)
-    c.drawString(178, 575, r.dateFrom)
+    c.drawString(178, 575, date.date_to_string(r.dateFrom))
     c.setFont('CalibriBold', 11)
     c.drawString(358, 575, "Abreise")
     c.setFont('Calibri', 11)
-    c.drawString(458, 575, r.dateTo)
+    c.drawString(458, 575, date.date_to_string(r.dateTo))
     c.setFont('CalibriBold', 11)
     c.drawString(58, 560, "Gastname")
     c.setFont('Calibri', 11)

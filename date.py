@@ -1,5 +1,6 @@
 import time
 
+
 class Date:
     def __init__(self):
         self.day = 0
@@ -34,5 +35,14 @@ class Date:
         return time.strftime("%d.%m.%Y")
 
 
-d = Date()
-d.string_to_model("16.07.2002")
+def date_to_string(date):
+    return str(date['day']) + '.' + str(date['month']) + '.' + str(date['year'])
+
+
+def string_to_date(date_str):
+    date_arr = date_str.split('.')
+    return {
+        'day': date_arr[0],
+        'month': date_arr[1],
+        'year': date_arr[2]
+    }

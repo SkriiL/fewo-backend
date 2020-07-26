@@ -13,7 +13,8 @@ def get_all():
     return prices_dict
 
 
-def add(price_str, _id=-1):
+def add(price):
+    _id = price["id"]
     if _id == -1:
         _id = len(get_all()) + 1
         prices = get_all()
@@ -24,10 +25,9 @@ def add(price_str, _id=-1):
                 _id += 1
             else:
                 break
-    price = price_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    params = (_id, price[1], price[2], price[3], int(price[4]))
+    params = (_id, price["title"], price["subtitle"], price["priceString"], int(price["priority"]))
     c.execute('INSERT INTO prices VALUES(?, ?, ?, ?, ?)', params)
     conn.commit()
     conn.close()
@@ -42,7 +42,6 @@ def delete(_id):
     conn.close()
 
 
-def edit(price_str):
-    price = price_str.split('|')
-    delete(int(price[0]))
-    add(price_str, int(price[0]))
+def edit(price):
+    delete(int(price["id"]))
+    add(price)

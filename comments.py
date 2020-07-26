@@ -1,4 +1,5 @@
 import sqlite3
+import date
 
 
 def get_all():
@@ -9,12 +10,13 @@ def get_all():
     comments_dict = []
     conn.close()
     for p in comments:
-        comments_dict.append({'name': p[0], 'text': p[1], "dateCreated": p[2], 'id': p[3]})
+        comments_dict.append({'name': p[0], 'text': p[1], "dateCreated": date.string_to_date(p[2]), 'id': p[3]})
     return comments_dict
 
 
-def add(comment_str, _id=-1):
-    if _id == -1:
+def add(comment):
+    _id = comment["id"]
+    if comment["id"] == -1:
         _id = len(get_all()) + 1
         comments = get_all()
         ids = [c['id'] for c in comments]
@@ -24,10 +26,9 @@ def add(comment_str, _id=-1):
                 _id += 1
             else:
                 break
-    comment = comment_str.split('|')
     conn = sqlite3.connect('db.db')
     c = conn.cursor()
-    params = (comment[0], comment[1], comment[2], _id)
+    params = (comment["name"], comment["text"], date.date_to_string(comment["dateCreated"]), _id)
     c.execute('INSERT INTO comments VALUES(?, ?, ?, ?)', params)
     conn.commit()
     conn.close()
@@ -42,7 +43,6 @@ def delete(_id):
     conn.close()
 
 
-def edit(comment_str):
-    comment = comment_str.split('|')
-    delete(int(comment[3]))
-    add(comment_str, int(comment[3]))
+def edit(comment):
+    delete(int(comment["id"]))
+    add(comment)
